@@ -12,7 +12,7 @@ public class CameraZoomManager : MonoBehaviour
     public bool followPlayerY = false;
     private float lockedX;
 
-    private void Start()
+    private void Awake()
     {
         FollowPlayerYOnly();
     }
@@ -38,14 +38,14 @@ public class CameraZoomManager : MonoBehaviour
         {
             Vector3 camPos = cam.transform.position;
             cam.transform.position = player_tsfm.position;
-             cam.transform.rotation = Quaternion.Slerp(
+            cam.transform.rotation = Quaternion.Slerp(
                 cam.transform.rotation,
-                targetRotation.Value,
+                targetRotation.GetValueOrDefault(),
                 Time.deltaTime * moveSpeed
             );
 
             // Stop rotating if close enough
-            if (Quaternion.Angle(cam.transform.rotation, targetRotation.Value) < 0.01f)
+            if (Quaternion.Angle(cam.transform.rotation, targetRotation.GetValueOrDefault()) < 0.01f)
             {
                 cam.transform.rotation = targetRotation.Value;
                 targetRotation = null;

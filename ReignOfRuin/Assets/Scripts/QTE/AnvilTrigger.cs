@@ -8,6 +8,12 @@ public class AnvilTrigger : MonoBehaviour
 
     private bool playerNearby = false;                  // Tracks whether player is inside the anvil trigger zone
 
+    void Awake()
+    {
+        QTEGame = GameObject.Find("QTE").GetComponent<QTEManager>();
+        interactionPromptText = GameObject.Find("BlacksmithInteraction").GetComponent<TextMeshProUGUI>();
+    }
+
     void Update()
     {
         // Player presses space near anvil to start minigame

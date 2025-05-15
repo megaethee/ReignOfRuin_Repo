@@ -70,7 +70,7 @@ MonoBehaviour:
   dialogueUI: {fileID: 0}
   randDialogue:
   - {fileID: 11400000, guid: a40172eb547ae684bace626e17a125fb, type: 2}
-  - {fileID: 11400000, guid: 10db4c3b1322b7548a33ee2b8555d353, type: 2}
+  - {fileID: 11400000, guid: 52b94c7bd7cd0d643a86666d4085f26f, type: 2}
   rB: {fileID: 0}
 --- !u!54 &3413211538187636272
 Rigidbody:
@@ -244,7 +244,6 @@ MonoBehaviour:
   dmg: 0
   finalTargCord: {x: 0, y: 0}
   opponentFound: 0
-  enemy: {fileID: 0}
 --- !u!114 &7048411075496931292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -258,6 +257,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   troop: {fileID: 4344707097070472264}
+  enemy: {fileID: 0}
 --- !u!1 &4649626281728029866
 GameObject:
   m_ObjectHideFlags: 0

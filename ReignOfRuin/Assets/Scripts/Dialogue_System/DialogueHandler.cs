@@ -17,6 +17,8 @@ public class DialogueHandler : MonoBehaviour
     public float delay = 0.1f;
     public GameObject canvas;  
 
+    public bool stopWriting;
+
     private void Awake()
     {
         if (null == _Instance)
@@ -53,8 +55,10 @@ public class DialogueHandler : MonoBehaviour
                 pB.CompleteProceedButton();
                 return; 
             }
-            else
+            else {
+                stopWriting = true;
                 StartCoroutine(TypeWriter(testDialogue.dialogueSequence[testDialogue.inx], testDialogue)); 
+            }
     }
 
     // Update is called once per frame
@@ -66,9 +70,12 @@ public class DialogueHandler : MonoBehaviour
 
 //put an interrupt here so its not janky
     public IEnumerator TypeWriter(string dialogue, Dialogue testDialogue) {
+        stopWriting = false;
         int curInx = testDialogue.inx; 
         for (int i=0; i<testDialogue.dialogueSequence[curInx].Length+1; i++) {
             txtToScreen.text = testDialogue.dialogueSequence[curInx].Substring(0, i);
+
+            if (stopWriting) yield break;
             yield return new WaitForSeconds(delay);
         }
     }

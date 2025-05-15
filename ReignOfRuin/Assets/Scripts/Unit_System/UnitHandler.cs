@@ -16,11 +16,14 @@ public class UnitHandler : MonoBehaviour
    public int statMultiplier;
    public GameObject interactObj;
 
+   public CameraZoomManager cameraZoomManager;
+
    [SerializeField] 
    private int instantCounter = 0;
 
    private void Awake()
    {
+      cameraZoomManager = GameObject.Find("Cameras").GetComponent<CameraZoomManager>();
       maxStates = transform.childCount;
       gameObject.tag = "Untagged";
       transform.GetChild(0).gameObject.GetComponent<UnitInterface>().Again();

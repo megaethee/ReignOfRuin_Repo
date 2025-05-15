@@ -26,7 +26,7 @@ public class QTEManager : MonoBehaviour
     public PlayerController playerMovementScript;       // Player movement script to disable during minigame
 
     // Events
-    public UnityEvent<int> onMinigameCompleted;         // Event callback with final score
+    public UnityEvent<int> onMinigameCompleted;         // Event callback with final score 
 
     // Internal state
     private int currentAttempts = 0;
@@ -35,11 +35,12 @@ public class QTEManager : MonoBehaviour
     private bool gameActive = false;
     private float timer = 0f;
 
-    void Start()
+    void Awake()
     {
         // Make sure none of the prompt text and score text UI is visible on game start
         cueText.text = "";
         scoreText.text = "";
+
     }
 
     void Update()
@@ -196,6 +197,8 @@ public class QTEManager : MonoBehaviour
         StartCoroutine(ClearCueTextAfterDelay());
 
         onMinigameCompleted?.Invoke(score); // Notify listeners
+
+        GameObject.FindWithTag("Station").GetComponent<UnitHandler>().StateProceed();
     }
 
     // Clears cue text after a short delay

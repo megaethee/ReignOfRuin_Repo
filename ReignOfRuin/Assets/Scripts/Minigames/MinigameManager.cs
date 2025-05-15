@@ -16,6 +16,8 @@ public class MinigameManager : MonoBehaviour
 
     public int gameLvl=0;
 
+    public Vector3 curPosition;
+
     private void Awake()
     {
         if (null == _Instance)
@@ -41,7 +43,7 @@ public class MinigameManager : MonoBehaviour
     private void StartMiniGame(MiniGame mG, UnitHandler sH)
     {
         //instantiate minigame object here
-        GameObject miniGamePref = Instantiate(mG.mgObj, mG.mgObj.transform.position, mG.mgObj.transform.rotation); 
+        GameObject miniGamePref = Instantiate(mG.mgObj, curPosition, mG.mgObj.transform.rotation); 
         //at the end of this coroutine, clear randGames
         randGames.Clear();
     } 
