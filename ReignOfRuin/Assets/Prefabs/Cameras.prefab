@@ -27,13 +27,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 447395794362784009}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.4241994, y: -0, z: -0, w: 0.90556884}
-  m_LocalPosition: {x: 0, y: -11, z: -251.3}
+  m_LocalRotation: {x: 0.2762597, y: -0, z: -0, w: 0.96108305}
+  m_LocalPosition: {x: 0.59, y: -24.8, z: -240}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6910926011391416265}
-  m_LocalEulerAnglesHint: {x: 50.2, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 32.074, y: 0, z: 0}
 --- !u!20 &8919832261684143439
 Camera:
   m_ObjectHideFlags: 0
@@ -69,7 +69,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 12.76
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -211,13 +211,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7629305512849651036}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.5, y: 0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 1.23, y: -0, z: -207.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6910926011391416265}
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: -90}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!20 &5587547188443793320
 Camera:
   m_ObjectHideFlags: 0
@@ -253,7 +253,7 @@ Camera:
   far clip plane: 1000
   field of view: 60.000004
   orthographic: 1
-  orthographic size: 113
+  orthographic size: 8.4
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
