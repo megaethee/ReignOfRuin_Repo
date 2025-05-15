@@ -15,6 +15,7 @@ public class MinigameState : MonoBehaviour, UnitInterface
    public void Again()
    {
       
+      MinigameManager._Instance.curPosition = transform.parent.position;
 
       transform.parent.GetComponent<UnitHandler>().cameraZoomManager.FollowPlayerYOnly();
       //miniGameObj = Instantiate(minigame, DialogueHandler._Instance.canvas.transform.position, minigame.transform.rotation, DialogueHandler._Instance.canvas.transform);
