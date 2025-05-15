@@ -4,14 +4,10 @@ using System.Collections.Generic;
 
 public class CharacterStation : MonoBehaviour, UnitInterface
 { 
-   
-   public Transform stationCamTransform;
    public GameObject dialogueUI;
    public Dialogue dialogue;
-   //private GameObject dialogueObj; 
+   private GameObject dialogueObj; 
    private UnitHandler unitHandler;
-   [SerializeField]
-   private Bounds bounds;
 
    GameObject canvas;  
 
@@ -19,58 +15,37 @@ public class CharacterStation : MonoBehaviour, UnitInterface
    { 
       unitHandler = transform.parent.gameObject.GetComponent<UnitHandler>(); 
 
-      //Again();
+      Again();
       canvas = GameObject.Find("Canvas");  
-      
    }  
 
    public void Again()
    {
-      transform.parent.gameObject.tag = "Untagged"; 
-
-      if (transform.parent.gameObject.GetComponent<BoxCollider>() != null)
-         bounds = transform.parent.gameObject.GetComponent<BoxCollider>().bounds;
-      
-      if (dialogueUI == null)
-         dialogueUI = GameObject.Find("InteractionUI").transform.GetChild(0).gameObject;
+      transform.parent.gameObject.tag = "Untagged";   
    }
 
    private void OnTriggerEnter(Collider other)
-   {
-      if (other.tag == "Player" && !PlayerStates._Instance.isEngaged)
-      {
-         transform.parent.gameObject.tag = "Station";
-         unitHandler.cameraZoomManager.StopFollowingPlayer();
-         unitHandler.cameraZoomManager.MoveToTarget(stationCamTransform);
-         DialogueEngaged();    
-               
+   {    
+      if (other.tag == "Player" && !PlayerStates._Instance.isEngaged && !unitHandler.imEngaged) { 
+         transform.parent.gameObject.tag = "Station"; 
+         DialogueEngaged();          
       } 
    }  
 
    private void OnTriggerExit(Collider other)
    {
       if (other.tag == "Player") {
-         unitHandler.cameraZoomManager.FollowPlayerYOnly();
-         //cameraZoomManager.ResetCamera();
          Again();
-         //Destroy(dialogueObj);
-         dialogueUI.SetActive(false);
+         Destroy(dialogueObj);
          PlayerStates._Instance.isEngaged = false;
          unitHandler.imEngaged = false;
       }
    }  
 
-   void Update()
-   {
-      if (Input.GetKeyDown(KeyCode.Space) && unitHandler.imEngaged)
-         DialogueHandler._Instance.SpeechProceed();
-   }
-
    private void DialogueEngaged()
    {
       if (GameObject.FindWithTag("InteractUI") == null) {
-         //dialogueObj = Instantiate(dialogueUI, canvas.transform.position, dialogueUI.transform.rotation, canvas.transform); 
-         dialogueUI.SetActive(true);
+         dialogueObj = Instantiate(dialogueUI, canvas.transform.position, dialogueUI.transform.rotation, canvas.transform); 
          DialogueHandler._Instance.Begin(dialogue); 
          PlayerStates._Instance.isEngaged = true;
          unitHandler.imEngaged = true;
@@ -80,7 +55,6 @@ public class CharacterStation : MonoBehaviour, UnitInterface
    public void DestroyUI()
    {  
       PlayerStates._Instance.isEngaged = false; 
-      //Destroy(dialogueObj);  
-      dialogueUI.SetActive(false);
+      Destroy(dialogueObj);  
    }
 }

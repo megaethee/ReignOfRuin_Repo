@@ -9,13 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53739ba1bb89d3949b14725d1d844de8, type: 3}
-  m_Name: OpponentTroopStats
+  m_Script: {fileID: 11500000, guid: 3a09722db844d0f4c9b499746e164f2b, type: 3}
+  m_Name: TestDialogue 2
   m_EditorClassIdentifier: 
-  targCord: {x: 0, y: 0}
-  speed: 0.5
-  xPosition: 0
-  yPosition: 0
-  health: 10
-  dmg: 1
-  path: 0
+  dialogueSequence:
+  - You there!
+  - Press my button!
+  inx: 1
