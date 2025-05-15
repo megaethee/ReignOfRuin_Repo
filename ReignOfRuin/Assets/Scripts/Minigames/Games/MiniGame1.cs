@@ -17,5 +17,6 @@ public class MiniGame1 : MonoBehaviour
     public void MinigameOver()
     {
         stationHandler.StateProceed();
+        Destroy(gameObject);
     }
 }

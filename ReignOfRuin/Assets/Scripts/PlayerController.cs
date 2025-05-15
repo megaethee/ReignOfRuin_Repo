@@ -8,6 +8,9 @@ public class PlayerController : MonoBehaviour
     private Vector2 move;
     public int CoinCounter = 0;
 
+    [SerializeField]
+    private Rigidbody rB;
+
     public void OnMove(InputAction.CallbackContext context)
     {
         move = context.ReadValue<Vector2>();
@@ -21,9 +24,11 @@ public class PlayerController : MonoBehaviour
         if(null == _Instance){
             _Instance = this;
         }
-        else{
+        else {
             Destroy(gameObject);
         }
+
+        rB = GetComponent<Rigidbody>();
     }
     // Update is called once per frame
     void Update()
@@ -39,6 +44,7 @@ public class PlayerController : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement), 0.15f);
 
         transform.Translate(movement * speed * Time.deltaTime, Space.World);
+        //rB.MovePosition(transform.position + movement * Time.deltaTime * speed);
     }
 
     public void OnTriggerEnter(Collider other)

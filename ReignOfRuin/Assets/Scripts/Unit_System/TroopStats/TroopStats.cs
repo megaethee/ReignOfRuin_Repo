@@ -9,7 +9,7 @@ public class TroopStats : ScriptableObject
 
    public int xPosition, yPosition;
 
-   public float health=10f, dmg=1f;
+   public float health=10f, dmg=1f;  
    
    private Vector2Int targCord;
 
@@ -38,5 +38,5 @@ public class TroopStats : ScriptableObject
       } 
       
       return targCord;
-   }
+   } 
 }
