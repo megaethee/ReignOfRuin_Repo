@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4772264073837253492}
   - component: {fileID: 5832246436558106311}
   m_Layer: 0
-  m_Name: Coin Minigame Manager
+  m_Name: Chicken Minigame Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

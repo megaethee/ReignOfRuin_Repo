@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CoinRotator : MonoBehaviour
+public class Rotator : MonoBehaviour
 {
     public float rotationSpeed = 1;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
