@@ -48,7 +48,7 @@ public class CameraZoomManager : MonoBehaviour
             if (Quaternion.Angle(cam.transform.rotation, targetRotation.GetValueOrDefault()) < 0.01f)
             {
                 cam.transform.rotation = targetRotation.Value;
-                targetRotation = null;
+                //targetRotation = null;
             }
             return; // Prevent other movement logic from running
         }
@@ -81,7 +81,7 @@ public class CameraZoomManager : MonoBehaviour
             if (Quaternion.Angle(cam.transform.rotation, targetRotation.Value) < 0.01f)
             {
                 cam.transform.rotation = targetRotation.Value;
-                targetRotation = null;
+                //targetRotation = null;
             }
         }
     }
