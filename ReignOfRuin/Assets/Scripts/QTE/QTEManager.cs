@@ -37,7 +37,7 @@ public class QTEManager : MonoBehaviour
 
     void Start()
     {
-        // Make sure no UI is visible on game start
+        // Make sure none of the prompt text and score text UI is visible on game start
         cueText.text = "";
         scoreText.text = "";
     }
