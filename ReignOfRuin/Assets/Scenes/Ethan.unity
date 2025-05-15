@@ -438,7 +438,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62ae77c8248cf1b4e9d96c669aa68367, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraZoomManager: {fileID: 0}
   stationCamTransform: {fileID: 2005045187}
   dialogueUI: {fileID: 0}
   dialogue: {fileID: 11400000, guid: d483d339e2cf4784cb911121600451fa, type: 2}
@@ -1895,6 +1894,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 4051501661532947453, guid: 87b6bddbbb4dae2449b4f8031e9c1844, type: 3}
+    - {fileID: -136003225304806879, guid: 87b6bddbbb4dae2449b4f8031e9c1844, type: 3}
+    - {fileID: 5642151403038483696, guid: 87b6bddbbb4dae2449b4f8031e9c1844, type: 3}
+    - {fileID: -6771318876176522861, guid: 87b6bddbbb4dae2449b4f8031e9c1844, type: 3}
+    - {fileID: -8255736270987090531, guid: 87b6bddbbb4dae2449b4f8031e9c1844, type: 3}
+    - {fileID: -1444534682998517927, guid: 87b6bddbbb4dae2449b4f8031e9c1844, type: 3}
+    - {fileID: -4023389249879369369, guid: 87b6bddbbb4dae2449b4f8031e9c1844, type: 3}
+    - {fileID: 507674116416932033, guid: 87b6bddbbb4dae2449b4f8031e9c1844, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87b6bddbbb4dae2449b4f8031e9c1844, type: 3}
@@ -2266,7 +2272,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a840338385221a4aabe44f04e5e56ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Manager: 0
+  CameraManager: 0
+  LaneManager: 0
 --- !u!1 &2131706826
 GameObject:
   m_ObjectHideFlags: 0
