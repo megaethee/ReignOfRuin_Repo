@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53739ba1bb89d3949b14725d1d844de8, type: 3}
   m_Name: OpponentTroopStats
   m_EditorClassIdentifier: 
-  targCord: {x: 0, y: 0}
   speed: 0.5
-  xPosition: 0
-  yPosition: 0
+  xPosition: 2
+  yPosition: 15
   health: 10
   dmg: 1
   path: 0

@@ -29,13 +29,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7996719802284776123}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4232423148474874137}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!65 &355712371893373559
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -113,8 +113,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   troopStats: {fileID: 11400000, guid: 2812df654fd4eee499053b4173153ac7, type: 2}
   tC: {fileID: 11400000, guid: 09019da5a91633541879fd6723e141aa, type: 2}
-  health: 0
-  dmg: 0
+  troopType: 0
+  health: 10
+  dmg: 1
+  finalTargCord: {x: 0, y: 0}
 --- !u!54 &3892988116996683761
 Rigidbody:
   m_ObjectHideFlags: 0

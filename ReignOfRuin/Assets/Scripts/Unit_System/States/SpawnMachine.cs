@@ -9,19 +9,20 @@ public class SpawnMachine : MonoBehaviour, UnitInterface
    [SerializeField] private float offsetX, offsetZ;
    
    public int amountToSpawn;
+   public float spawnInterval = 0.05f;
 //store previously spawned positions so they don't spawn on top of each other
    public Vector3 randPos, space;
    [SerializeField] private List<Vector3> randPositions = new List<Vector3>();
 
    private void Awake()
      {
-        bounds = transform.parent.gameObject.GetComponent<BoxCollider>().bounds; 
+        bounds = transform.parent.gameObject.GetComponent<BoxCollider>().bounds;  
      }
 
    public void Again()
    {
       if (randPositions.Count > 0) randPositions.Clear();
-     StartCoroutine(SpawnRandom());
+      StartCoroutine(SpawnRandom());
    }
 
    void BoundsCalculator()
@@ -42,7 +43,7 @@ public class SpawnMachine : MonoBehaviour, UnitInterface
                
                //space = randPos + new Vector3(0.5f, 0, 0.5f);
                
-               yield return new WaitForSeconds(0.05f); 
+               yield return new WaitForSeconds(spawnInterval); 
         }
    
       transform.parent.gameObject.GetComponent<UnitHandler>().StateReset();
