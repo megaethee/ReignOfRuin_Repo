@@ -41,7 +41,7 @@ public class ProceedButton : MonoBehaviour
 
    public void MinigameProceed()
    {
-      //FindUnit();
+      FindUnit();
       //Debug.Log("Time for a minigame");
       MinigameManager._Instance.InitMinigame(transform.GetSiblingIndex(), sH);
       //Destroy(transform.parent.gameObject);

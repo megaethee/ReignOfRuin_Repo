@@ -16,7 +16,10 @@ public class ChickenSpawner : MonoBehaviour
             Instantiate(chickenPrefab, new Vector3(Random.Range(minX, maxX), 0.75f,Random.Range(minZ,maxZ)), Quaternion.identity);
         }
         if (GameObject.FindWithTag("Station") != null)
+        {
             stationHandler = GameObject.FindWithTag("Station").GetComponent<UnitHandler>();
+            stationHandler.minigameStarted = true;
+        }
     }
 
     // Update is called once per frame

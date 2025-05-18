@@ -10,9 +10,14 @@ public class MinigameManager : MonoBehaviour
         public int lvl;
         public GameObject mgObj;
     }
- 
-    public List<MiniGame> miniGames = new List<MiniGame>();
-    public List<MiniGame> randGames = new List<MiniGame>();  
+    [System.Serializable] public struct MiniGames {
+        public List<MiniGame> miniGames;
+
+        public MiniGames(List<MiniGame> miniGames) {
+            this.miniGames = miniGames;
+        }
+    } 
+    public List<MiniGames> mgDataBase = new List<MiniGames>(); 
 
     public int gameLvl=0;
 
@@ -30,21 +35,33 @@ public class MinigameManager : MonoBehaviour
     { 
         gameLvl = x;
 
-       for (int i=0; i<miniGames.Count; i++) {
-            if (x == miniGames[i].lvl) {
-                randGames.Add(miniGames[i]);              
-            }
-       } 
+        if (sH == null) Debug.Log("sH is null");
+
+        switch (sH.unitType)
+            {
+                case UnitHandler.UnitType.Peasant:
+                    Debug.Log("I am peasant");
+                    StartMiniGame(mgDataBase[0].miniGames[gameLvl]);
+                    break;
+                case UnitHandler.UnitType.Archer:
+                    Debug.Log("I am archer");
+                    StartMiniGame(mgDataBase[1].miniGames[gameLvl]);
+                    break;
+                case UnitHandler.UnitType.Blacksmith:
+                    Debug.Log("I am blacksmith");
+                    break;
+                case UnitHandler.UnitType.Wizard:
+                    Debug.Log("I am a wizard");
+                    break;
+            } 
         
-       StartMiniGame(randGames[Random.Range(0, randGames.Count)], sH);
+       //StartMiniGame();
 
     }
 
-    private void StartMiniGame(MiniGame mG, UnitHandler sH)
+    private void StartMiniGame(MiniGame mG)
     {
         //instantiate minigame object here
-        GameObject miniGamePref = Instantiate(mG.mgObj, curPosition, mG.mgObj.transform.rotation); 
-        //at the end of this coroutine, clear randGames
-        randGames.Clear();
+        GameObject miniGamePref = Instantiate(mG.mgObj, curPosition, mG.mgObj.transform.rotation);  
     } 
 }

@@ -22,7 +22,7 @@ public class QTEManager : MonoBehaviour
     public int maxAttempts = 5;                         // How many prompts total
 
     // References
-    public GameObject player;                           // Reference to player GameObject
+    public GameObject player, anvilTrigger;                           // Reference to player GameObject
     public PlayerController playerMovementScript;       // Player movement script to disable during minigame
 
     // Events
@@ -38,6 +38,7 @@ public class QTEManager : MonoBehaviour
     void Awake()
     {
         // Make sure none of the prompt text and score text UI is visible on game start
+        //cueText.gameObject.transform.parent.gameObject.SetActive(false);
         cueText.text = "";
         scoreText.text = "";
 
@@ -50,7 +51,7 @@ public class QTEManager : MonoBehaviour
         // If either one is not true, then the Update shouldn't work
         if (!gameActive || !canHit) return;
 
-        timer += Time.deltaTime;
+        timer += Time.deltaTime; 
 
         // Check for spacebar input
         if (Input.GetKeyDown(KeyCode.Space))
@@ -72,6 +73,8 @@ public class QTEManager : MonoBehaviour
         // Prevent re-triggering if game already running
         if (gameActive) return;
 
+        anvilTrigger = GameObject.Find("AnvilTrigger(Clone)");
+        cueText.gameObject.transform.parent.gameObject.SetActive(true);
         gameActive = true;
         currentAttempts = 0;
         score = 0;
@@ -199,6 +202,10 @@ public class QTEManager : MonoBehaviour
         onMinigameCompleted?.Invoke(score); // Notify listeners
 
         GameObject.FindWithTag("Station").GetComponent<UnitHandler>().StateProceed();
+
+        cueText.gameObject.transform.parent.gameObject.SetActive(false);
+
+        Destroy(anvilTrigger);
     }
 
     // Clears cue text after a short delay

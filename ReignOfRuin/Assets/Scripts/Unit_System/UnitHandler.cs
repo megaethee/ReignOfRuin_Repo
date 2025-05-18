@@ -7,12 +7,13 @@ public class UnitHandler : MonoBehaviour
    //brainstorm: Use monobehavior exclusives like OnTrigger in scriptable objects  
    public int state = 1, maxStates = 3;  
    public enum UnitType {
-      Station,
-      Unit,
-      Opponent
+      Peasant,
+      Archer,
+      Blacksmith,
+      Wizard 
    } public UnitType unitType;
 
-   public bool imEngaged, ranInto;
+   public bool imEngaged, ranInto, minigameStarted;
    public int statMultiplier;
    public GameObject interactObj;
 
@@ -68,9 +69,10 @@ public class UnitHandler : MonoBehaviour
 
    public void StateReset()
    { 
+      minigameStarted = false;
       transform.GetChild(state-1).gameObject.SetActive(false);
       transform.GetChild(0).gameObject.SetActive(true);
-      if (unitType == UnitType.Station) transform.GetChild(0).gameObject.GetComponent<CharacterStation>().Again();
+      if (gameObject.tag == "Station") transform.GetChild(0).gameObject.GetComponent<CharacterStation>().Again();
       state = 1;
    }
 

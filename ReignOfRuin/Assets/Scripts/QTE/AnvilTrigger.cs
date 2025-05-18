@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 
 public class AnvilTrigger : MonoBehaviour
@@ -6,11 +8,13 @@ public class AnvilTrigger : MonoBehaviour
     public QTEManager QTEGame;                          // Reference to the QTEManager 
     public TextMeshProUGUI interactionPromptText;       // Reference to the prompt text UI, basically the thing titled blacksmith interaction under canvas
 
-    private bool playerNearby = false;                  // Tracks whether player is inside the anvil trigger zone
+    private bool playerNearby = false;
+                  // Tracks whether player is inside the anvil trigger zone
 
     void Awake()
     {
         QTEGame = GameObject.Find("QTE").GetComponent<QTEManager>();
+       
         interactionPromptText = GameObject.Find("BlacksmithInteraction").GetComponent<TextMeshProUGUI>();
     }
 
@@ -26,6 +30,7 @@ public class AnvilTrigger : MonoBehaviour
             if (interactionPromptText != null)
                 interactionPromptText.text = "";
         }
+ 
     }
 
     void OnTriggerEnter(Collider other)
@@ -51,6 +56,8 @@ public class AnvilTrigger : MonoBehaviour
             // Hide the interaction prompt when player walks away
             if (interactionPromptText != null)
                 interactionPromptText.text = "";
+
+            Destroy(gameObject);
         }
     }
 }
