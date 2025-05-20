@@ -11,9 +11,11 @@ public class MinigameManager : MonoBehaviour
         public GameObject mgObj;
     }
     [System.Serializable] public struct MiniGames {
+        public string name;
         public List<MiniGame> miniGames;
 
-        public MiniGames(List<MiniGame> miniGames) {
+        public MiniGames(string name, List<MiniGame> miniGames) {
+            this.name = name;
             this.miniGames = miniGames;
         }
     } 
@@ -38,22 +40,23 @@ public class MinigameManager : MonoBehaviour
         if (sH == null) Debug.Log("sH is null");
 
         switch (sH.unitType)
-            {
-                case UnitHandler.UnitType.Peasant:
-                    Debug.Log("I am peasant");
-                    StartMiniGame(mgDataBase[0].miniGames[gameLvl]);
-                    break;
-                case UnitHandler.UnitType.Archer:
-                    Debug.Log("I am archer");
-                    StartMiniGame(mgDataBase[1].miniGames[gameLvl]);
-                    break;
-                case UnitHandler.UnitType.Blacksmith:
-                    Debug.Log("I am blacksmith");
-                    break;
-                case UnitHandler.UnitType.Wizard:
-                    Debug.Log("I am a wizard");
-                    break;
-            } 
+        {
+            case UnitHandler.UnitType.Peasant:
+                Debug.Log("I am peasant");
+                StartMiniGame(mgDataBase[0].miniGames[gameLvl]);
+                break;
+            case UnitHandler.UnitType.Archer:
+                Debug.Log("I am archer");
+                //StartMiniGame(mgDataBase[1].miniGames[gameLvl]);
+                break;
+            case UnitHandler.UnitType.Blacksmith:
+                Debug.Log("I am blacksmith");
+                StartMiniGame(mgDataBase[2].miniGames[gameLvl]);
+                break;
+            case UnitHandler.UnitType.Wizard:
+                Debug.Log("I am a wizard");
+                break;
+        } 
         
        //StartMiniGame();
 

@@ -1877,6 +1877,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5587547188443793320, guid: 68d81f083158b184394f1dc642019b6a, type: 3}
+      propertyPath: orthographic size
+      value: 10.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 5587547188443793320, guid: 68d81f083158b184394f1dc642019b6a, type: 3}
+      propertyPath: m_NormalizedViewPortRect.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6274943890793941500, guid: 68d81f083158b184394f1dc642019b6a, type: 3}
       propertyPath: m_Name
       value: Cameras
@@ -3002,6 +3010,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 270236571612572658, guid: 1f0abc2aeb49ed7469f63a4466cba705, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 91
+      objectReference: {fileID: 0}
+    - target: {fileID: 270236571612572658, guid: 1f0abc2aeb49ed7469f63a4466cba705, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -78.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 770782083595122669, guid: 1f0abc2aeb49ed7469f63a4466cba705, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -43.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 770782083595122669, guid: 1f0abc2aeb49ed7469f63a4466cba705, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -355
+      objectReference: {fileID: 0}
+    - target: {fileID: 792498493695617852, guid: 1f0abc2aeb49ed7469f63a4466cba705, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -140.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 792498493695617852, guid: 1f0abc2aeb49ed7469f63a4466cba705, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4939211793754677840, guid: 1f0abc2aeb49ed7469f63a4466cba705, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -3085,6 +3117,18 @@ PrefabInstance:
     - target: {fileID: 5547910624460689124, guid: 1f0abc2aeb49ed7469f63a4466cba705, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6537104321597828052, guid: 1f0abc2aeb49ed7469f63a4466cba705, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8316403445150882057, guid: 1f0abc2aeb49ed7469f63a4466cba705, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 149.59995
+      objectReference: {fileID: 0}
+    - target: {fileID: 8316403445150882057, guid: 1f0abc2aeb49ed7469f63a4466cba705, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4142,6 +4186,22 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5094781362733124248, guid: 93e38fff73476f84aae0e42e6dd4d664, type: 3}
+      propertyPath: mgDataBase.Array.data[0].name
+      value: Peasant
+      objectReference: {fileID: 0}
+    - target: {fileID: 5094781362733124248, guid: 93e38fff73476f84aae0e42e6dd4d664, type: 3}
+      propertyPath: mgDataBase.Array.data[1].name
+      value: Archer
+      objectReference: {fileID: 0}
+    - target: {fileID: 5094781362733124248, guid: 93e38fff73476f84aae0e42e6dd4d664, type: 3}
+      propertyPath: mgDataBase.Array.data[2].name
+      value: Blacksmith
+      objectReference: {fileID: 0}
+    - target: {fileID: 5094781362733124248, guid: 93e38fff73476f84aae0e42e6dd4d664, type: 3}
+      propertyPath: mgDataBase.Array.data[3].name
+      value: Wizard
+      objectReference: {fileID: 0}
+    - target: {fileID: 5094781362733124248, guid: 93e38fff73476f84aae0e42e6dd4d664, type: 3}
       propertyPath: miniGames.Array.data[0].mgObj
       value: 
       objectReference: {fileID: 4986211995718712712, guid: 2662e50a24853a9499b06ebcd8879ebc, type: 3}
@@ -4167,6 +4227,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5094781362733124248, guid: 93e38fff73476f84aae0e42e6dd4d664, type: 3}
       propertyPath: mgDataBase.Array.data[1].miniGames.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5094781362733124248, guid: 93e38fff73476f84aae0e42e6dd4d664, type: 3}
+      propertyPath: mgDataBase.Array.data[2].miniGames.Array.size
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5094781362733124248, guid: 93e38fff73476f84aae0e42e6dd4d664, type: 3}
@@ -4194,6 +4258,18 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5094781362733124248, guid: 93e38fff73476f84aae0e42e6dd4d664, type: 3}
+      propertyPath: mgDataBase.Array.data[2].miniGames.Array.data[0].lvl
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5094781362733124248, guid: 93e38fff73476f84aae0e42e6dd4d664, type: 3}
+      propertyPath: mgDataBase.Array.data[2].miniGames.Array.data[1].lvl
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5094781362733124248, guid: 93e38fff73476f84aae0e42e6dd4d664, type: 3}
+      propertyPath: mgDataBase.Array.data[2].miniGames.Array.data[2].lvl
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5094781362733124248, guid: 93e38fff73476f84aae0e42e6dd4d664, type: 3}
       propertyPath: mgDataBase.Array.data[0].miniGames.Array.data[0].mgObj
       value: 
       objectReference: {fileID: 7847657940092256571, guid: bfe891702a148f44d9b3216a9d8f97d1, type: 3}
@@ -4215,6 +4291,18 @@ PrefabInstance:
       objectReference: {fileID: 1999506474819776649, guid: 701b942560cc36e4aa5e6377b21d9a69, type: 3}
     - target: {fileID: 5094781362733124248, guid: 93e38fff73476f84aae0e42e6dd4d664, type: 3}
       propertyPath: mgDataBase.Array.data[1].miniGames.Array.data[2].mgObj
+      value: 
+      objectReference: {fileID: 1999506474819776649, guid: 701b942560cc36e4aa5e6377b21d9a69, type: 3}
+    - target: {fileID: 5094781362733124248, guid: 93e38fff73476f84aae0e42e6dd4d664, type: 3}
+      propertyPath: mgDataBase.Array.data[2].miniGames.Array.data[0].mgObj
+      value: 
+      objectReference: {fileID: 1999506474819776649, guid: 701b942560cc36e4aa5e6377b21d9a69, type: 3}
+    - target: {fileID: 5094781362733124248, guid: 93e38fff73476f84aae0e42e6dd4d664, type: 3}
+      propertyPath: mgDataBase.Array.data[2].miniGames.Array.data[1].mgObj
+      value: 
+      objectReference: {fileID: 1999506474819776649, guid: 701b942560cc36e4aa5e6377b21d9a69, type: 3}
+    - target: {fileID: 5094781362733124248, guid: 93e38fff73476f84aae0e42e6dd4d664, type: 3}
+      propertyPath: mgDataBase.Array.data[2].miniGames.Array.data[2].mgObj
       value: 
       objectReference: {fileID: 1999506474819776649, guid: 701b942560cc36e4aa5e6377b21d9a69, type: 3}
     - target: {fileID: 8608430938312615269, guid: 93e38fff73476f84aae0e42e6dd4d664, type: 3}

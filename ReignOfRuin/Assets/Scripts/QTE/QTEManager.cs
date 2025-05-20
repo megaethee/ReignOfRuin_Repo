@@ -24,6 +24,7 @@ public class QTEManager : MonoBehaviour
     // References
     public GameObject player, anvilTrigger;                           // Reference to player GameObject
     public PlayerController playerMovementScript;       // Player movement script to disable during minigame
+    public UnitHandler sH;
 
     // Events
     public UnityEvent<int> onMinigameCompleted;         // Event callback with final score 
@@ -73,6 +74,12 @@ public class QTEManager : MonoBehaviour
         // Prevent re-triggering if game already running
         if (gameActive) return;
 
+        if (GameObject.FindWithTag("Station") != null)
+        {
+            sH = GameObject.FindWithTag("Station").GetComponent<UnitHandler>();
+            sH.minigameStarted = true;
+        }
+    
         anvilTrigger = GameObject.Find("AnvilTrigger(Clone)");
         cueText.gameObject.transform.parent.gameObject.SetActive(true);
         gameActive = true;
@@ -201,7 +208,7 @@ public class QTEManager : MonoBehaviour
 
         onMinigameCompleted?.Invoke(score); // Notify listeners
 
-        GameObject.FindWithTag("Station").GetComponent<UnitHandler>().StateProceed();
+        sH.StateProceed();
 
         cueText.gameObject.transform.parent.gameObject.SetActive(false);
 
