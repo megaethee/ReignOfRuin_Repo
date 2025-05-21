@@ -308,7 +308,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4649626281728029866}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: -3493870404480440094, guid: 38cf4006208cb274dba0a421679094ec, type: 3}
 --- !u!23 &8827419161410705727
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -332,7 +332,12 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 55f4eb609e96cfb419ee044d5ed9ca15, type: 2}
+  - {fileID: 7409454466802266342, guid: 38cf4006208cb274dba0a421679094ec, type: 3}
+  - {fileID: -2609809028551464901, guid: 38cf4006208cb274dba0a421679094ec, type: 3}
+  - {fileID: 9171952328373019990, guid: 38cf4006208cb274dba0a421679094ec, type: 3}
+  - {fileID: -4850876157055626382, guid: 38cf4006208cb274dba0a421679094ec, type: 3}
+  - {fileID: -5687652293832826756, guid: 38cf4006208cb274dba0a421679094ec, type: 3}
+  - {fileID: -2886261885951862949, guid: 38cf4006208cb274dba0a421679094ec, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -394,8 +399,10 @@ MonoBehaviour:
   unitType: 1
   imEngaged: 0
   ranInto: 0
+  minigameStarted: 0
   statMultiplier: 0
   interactObj: {fileID: 0}
+  cameraZoomManager: {fileID: 0}
   instantCounter: 0
 --- !u!54 &3575509762580055492
 Rigidbody:
