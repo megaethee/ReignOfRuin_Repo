@@ -43,7 +43,7 @@ public class MinigameManager : MonoBehaviour
         {
             case UnitHandler.UnitType.Peasant:
                 Debug.Log("I am peasant");
-                StartMiniGame(mgDataBase[0].miniGames[gameLvl]);
+                StartMiniGame(mgDataBase[0].miniGames[gameLvl-1]);
                 break;
             case UnitHandler.UnitType.Archer:
                 Debug.Log("I am archer");
@@ -51,10 +51,11 @@ public class MinigameManager : MonoBehaviour
                 break;
             case UnitHandler.UnitType.Blacksmith:
                 Debug.Log("I am blacksmith");
-                StartMiniGame(mgDataBase[2].miniGames[gameLvl]);
+                StartMiniGame(mgDataBase[2].miniGames[gameLvl-1]);
                 break;
             case UnitHandler.UnitType.Wizard:
                 Debug.Log("I am a wizard");
+                StartMiniGame(mgDataBase[3].miniGames[gameLvl-1]);
                 break;
         } 
         

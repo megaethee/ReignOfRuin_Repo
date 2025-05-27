@@ -25,36 +25,55 @@ public class WaitAndSelect : MonoBehaviour, UnitInterface
         startTileUI.SetActive(true);
 
         displayCordsText = startTileUI.GetComponent<TextMeshProUGUI>();
+
+        tC.teleCords.x = 0;
+        displayCordsText.text = "Pink";
+        displayCordsText.color = new Color32(236, 141, 255, 255);
     }
 
 
     void Update()
     { 
-        switch (tC.teleCords.x) {
-            case 0:
-                displayCordsText.text = "Pink";
-                displayCordsText.color = new Color32(236, 141, 255, 255);
-                break;
-            case 1:
-                displayCordsText.text = "Yellow";
-                displayCordsText.color = new Color32(255, 238, 131, 255);
-                break;
-            case 2:
-                displayCordsText.text = "Green";
-                displayCordsText.color = new Color32(87, 217, 135, 255);
-                break;
-        }
-        //displayCordsText.text = $"{tC.teleCords.x}, {tC.teleCords.y}";
+        //switch (tC.teleCords.x) {
+        //    case 0:
+        //        displayCordsText.text = "Pink";
+        //        displayCordsText.color = new Color32(236, 141, 255, 255);
+        //        break;
+        //    case 1:
+        //        displayCordsText.text = "Yellow";
+        //        displayCordsText.color = new Color32(255, 238, 131, 255);
+        //        break;
+        //    case 2:
+        //        displayCordsText.text = "Green";
+        //        displayCordsText.color = new Color32(87, 217, 135, 255);
+        //        break;
+        //}
+        ////displayCordsText.text = $"{tC.teleCords.x}, {tC.teleCords.y}";
 
-        if (Input.GetKeyDown(KeyCode.E)) {
-            tC.teleCords.x++;
-            if (tC.teleCords.x > GridManager._Instance.gridSize.x-1)
-                tC.teleCords.x = 0;
+        //if (Input.GetKeyDown(KeyCode.E)) {
+        //    tC.teleCords.x++;
+        //    if (tC.teleCords.x > GridManager._Instance.gridSize.x-1)
+        //        tC.teleCords.x = 0;
+        //}
+        //if (Input.GetKeyDown(KeyCode.Q)) {
+        //    tC.teleCords.x--;
+        //    if (tC.teleCords.x < 0)
+        //        tC.teleCords.x = GridManager._Instance.gridSize.x-1;
+        //}
+        if (Input.GetKeyDown(KeyCode.Alpha1)) {
+            tC.teleCords.x = 0;
+            displayCordsText.text = "Pink";
+            displayCordsText.color = new Color32(236, 141, 255, 255);
         }
-        if (Input.GetKeyDown(KeyCode.Q)) {
-            tC.teleCords.x--;
-            if (tC.teleCords.x < 0)
-                tC.teleCords.x = GridManager._Instance.gridSize.x-1;
+        if (Input.GetKeyDown(KeyCode.Alpha2)) {
+            tC.teleCords.x = 1;
+            displayCordsText.text = "Yellow";
+            displayCordsText.color = new Color32(255, 238, 131, 255);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3)) {
+            tC.teleCords.x = 2;
+            displayCordsText.text = "Green";
+            displayCordsText.color = new Color32(87, 217, 135, 255); 
         }
 
         if (Input.GetKeyDown(KeyCode.Space)) {
