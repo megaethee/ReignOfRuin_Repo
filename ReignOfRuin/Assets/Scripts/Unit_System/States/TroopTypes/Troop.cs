@@ -18,7 +18,8 @@ public class Troop : MonoBehaviour, UnitInterface
 
     public void Again()
     { 
-        StartCoroutine(PlayerStates._Instance.Blink());
+        if (transform.parent.tag == "PlayerTroop")
+            StartCoroutine(PlayerStates._Instance.Blink());
 
         health = troopStats.health;
         dmg = troopStats.dmg;
@@ -49,6 +50,16 @@ public class Troop : MonoBehaviour, UnitInterface
         while (GridManager._Instance == null)
             yield return null;
         Debug.Log("GridManager ready");
+
+        if (transform.parent.tag == "OpponentTroop")
+            InitCPUTroop();
+        else if (transform.parent.tag == "PlayerTroop")
+            StartCoroutine(MoveToGrid());
+    }
+
+    private void InitCPUTroop()
+    {
+        tC.teleCords = new Vector2Int(Random.Range(0, 3), GridManager._Instance.gridSize.y-1); 
 
         StartCoroutine(MoveToGrid());
     }
@@ -118,6 +129,11 @@ public class Troop : MonoBehaviour, UnitInterface
                 Debug.Log("I can't move");
                 yield break;
             }
+        }
+
+        if (troopStats.path == TroopStats.Path.Drunk) {
+            //Debug.Log("Do something");
+            GetComponent<Drunkard>().Recalc();
         }
     }
 

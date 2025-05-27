@@ -8,17 +8,11 @@ public class TroopOpponent : MonoBehaviour, UnitInterface
     //turn this into two scripts
     public TroopStats troopStats;  
     //public TeleCords tC;
-    public Vector2Int oppTeleCords;
-
-    public enum TroopType {
-        Peasant,
-        Archer,
-        Air
-    } public TroopType troopType; 
+    public Vector2Int oppTeleCords; 
 
     public float health, dmg;
     public Vector2Int finalTargCord;
-    private bool opponentFound;
+    public bool opponentFound;
     private GameObject enemy;
 
     private void Awake()
@@ -45,8 +39,6 @@ public class TroopOpponent : MonoBehaviour, UnitInterface
 
     private void InitCPUTroop()
     {
-        troopType = (TroopType)Random.Range(0, (int)System.Enum.GetValues(typeof(TroopType)).Cast<TroopType>().Max());
-
         oppTeleCords = new Vector2Int(Random.Range(0, 3), GridManager._Instance.gridSize.y-1); 
 
         StartCoroutine(MoveToGrid());
@@ -75,7 +67,7 @@ public class TroopOpponent : MonoBehaviour, UnitInterface
         StartCoroutine(MoveOnGrid());
     }
 
-    private IEnumerator MoveOnGrid()
+    public IEnumerator MoveOnGrid()
     {  
         //probably gonna need to add lerping to this
         if (transform.parent.position.x < GridManager._Instance.grid[finalTargCord].cords.x) {
@@ -116,45 +108,7 @@ public class TroopOpponent : MonoBehaviour, UnitInterface
         if (health <= 0)
             Destroy(transform.parent.gameObject);
          
-    }
-    
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "PlayerTroop" && opponentFound == false) { 
-            opponentFound = true;
-            enemy = other.gameObject;
-            StartCoroutine(DealDamage());
-        } 
-        if (other.tag == "PlayerStronghold" && opponentFound == false) {
-            opponentFound = true;
-            enemy = other.gameObject;
-            StartCoroutine(DealDamageStronghold());
-        }
-    }
-
-    private IEnumerator DealDamageStronghold()
-    {
-        while (enemy != null) {
-            enemy.GetComponent<Stronghold>().health -= dmg;
-
-            yield return new WaitForSeconds(troopStats.speed);
-        }
-    }
-
-    private IEnumerator DealDamage()
-    {
-        while (true) {
-            if (enemy != null) {
-                enemy.GetComponentInChildren<Troop>().health -= dmg;
-
-                yield return new WaitForSeconds(troopStats.speed);
-            } else {
-                opponentFound = false;
-                StartCoroutine(MoveOnGrid());
-                yield break;
-            }
-        }
-    }
+    } 
 
     public void DestroyUI()
     {}
