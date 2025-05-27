@@ -3,7 +3,7 @@ using UnityEngine;
 public class CameraZoomManager : MonoBehaviour
 {
     [SerializeField] private Transform player_tsfm;
-    [SerializeField] private FollowPlayerZ followPlayerZ;
+
     public Camera cam;
     public float moveSpeed = 5f;
 
@@ -21,16 +21,12 @@ public class CameraZoomManager : MonoBehaviour
     public void StopFollowingPlayer()
     {
         Debug.Log("CameraZoomManager: StopFollowingPlayer");
-        
         followPlayerY = false;
-        
     }
     public void FollowPlayerYOnly()
     {
         Debug.Log("CameraZoomManager: FollowPlayerYOnly");
-        followPlayerZ.ToggleOffset();
         followPlayerY = true;
-        
         //lockedX = cam.transform.position.x;
         targetPosition = null;    // Stop any target movement
         targetRotation = player_tsfm.rotation;    // Stop any target rotation
@@ -92,9 +88,8 @@ public class CameraZoomManager : MonoBehaviour
 
     public void MoveToTarget(Transform target)
     {
-        followPlayerZ.ToggleOffset();
         // Keep camera's z position (for 2D), or use target.position.z for 3D
-        targetPosition = new Vector3(target.position.x, target.position.y, target.position.z);
+        targetPosition = new Vector3(target.position.x, target.position.y, cam.transform.position.z);
         targetRotation = target.rotation;
     }
 

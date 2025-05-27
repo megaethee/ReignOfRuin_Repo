@@ -3,11 +3,9 @@ using UnityEngine;
 public class FollowPlayerZ : MonoBehaviour
 {
     [SerializeField] private Transform player; // Assign the player Transform in the Inspector
-    [SerializeField] private float cameraStartOffset = 0.5f; // Offset from the player's position
-    private float cameraOffset;
+    [SerializeField] private float cameraOffset = 0.5f; // Offset from the player's position
     private float fixedX;
     private float fixedY;
-    public bool offsetOn;
 
     void Awake()
     {
@@ -15,16 +13,7 @@ public class FollowPlayerZ : MonoBehaviour
         fixedX = transform.position.x;
         fixedY = transform.position.y;
     }
-    public void ToggleOffset(){
-        if(offsetOn){
-            cameraOffset -= cameraStartOffset;
-            offsetOn = false;
-        }
-        else{
-            cameraOffset = cameraStartOffset;
-            offsetOn = true;
-        }
-    }
+
     void Update()
     {
         if (player != null)
