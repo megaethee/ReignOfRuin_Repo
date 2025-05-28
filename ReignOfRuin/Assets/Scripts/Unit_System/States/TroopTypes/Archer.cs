@@ -9,7 +9,7 @@ public class Archer : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (transform.parent.tag == "PlayerUnit") {
+        if (transform.parent.tag == "PlayerTroop") {
             if (other.tag == "OpponentTroop" && troop.opponentFound == false) { 
                 troop.opponentFound = true;
                 enemy = other.gameObject;

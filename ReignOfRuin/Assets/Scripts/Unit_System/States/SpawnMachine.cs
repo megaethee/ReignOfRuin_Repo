@@ -46,7 +46,7 @@ public class SpawnMachine : MonoBehaviour, UnitInterface
                yield return new WaitForSeconds(spawnInterval); 
         }
    
-      StartCoroutine(PlayerStates._Instance.Blink());
+      //StartCoroutine(PlayerStates._Instance.Blink());
       transform.parent.gameObject.GetComponent<UnitHandler>().StateReset();
 
       yield return null;

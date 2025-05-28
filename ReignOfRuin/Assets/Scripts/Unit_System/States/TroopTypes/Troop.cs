@@ -9,7 +9,8 @@ public class Troop : MonoBehaviour, UnitInterface
     public TeleCords tC; 
 
     public float health, dmg;
-    public Vector2Int finalTargCord;
+    public Vector2Int finalTargCord, oppCords;
+    public Vector3 targPos;
     public bool opponentFound; 
 
     private void Awake()
@@ -63,7 +64,7 @@ public class Troop : MonoBehaviour, UnitInterface
 
     private void InitCPUTroop()
     {
-        tC.teleCords = new Vector2Int(Random.Range(0, 3), GridManager._Instance.gridSize.y-1); 
+        oppCords = new Vector2Int(Random.Range(0, 3), GridManager._Instance.gridSize.y-1); 
 
         Debug.Log("I am enemy");
 
@@ -73,7 +74,12 @@ public class Troop : MonoBehaviour, UnitInterface
     private IEnumerator MoveToGrid()
     {
         float elapsedTime=0, hangTime=2f;
-        Vector3 curPos=transform.parent.position, targPos=new Vector3(tC.teleCords.x, transform.parent.position.y, tC.teleCords.y), curRot=transform.parent.eulerAngles;
+        Vector3 curPos=transform.parent.position, curRot=transform.parent.eulerAngles;
+        //Vector3 targPos;
+        if (transform.parent.tag == "PlayerTroop")
+            targPos=new Vector3(tC.teleCords.x, transform.parent.position.y, tC.teleCords.y);
+        else if (transform.parent.tag == "OpponentTroop")
+            targPos=new Vector3(oppCords.x, transform.parent.position.y, oppCords.y);
 
         while (elapsedTime < hangTime) {
             transform.parent.position = Vector3.Lerp(curPos, targPos, (elapsedTime/hangTime));
