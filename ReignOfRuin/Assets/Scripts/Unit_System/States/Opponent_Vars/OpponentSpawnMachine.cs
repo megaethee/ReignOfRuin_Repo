@@ -2,9 +2,9 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class SpawnMachine : MonoBehaviour, UnitInterface
+public class OpponentSpawnMachine : MonoBehaviour, UnitInterface
 {
-   public GameObject unit; 
+   public List<GameObject> units = new List<GameObject>(); 
    [SerializeField] private Bounds bounds;
    [SerializeField] private float offsetX, offsetZ;
    
@@ -28,7 +28,7 @@ public class SpawnMachine : MonoBehaviour, UnitInterface
    void BoundsCalculator()
    { 
         offsetX = Random.Range(-bounds.extents.x, bounds.extents.x);
-        offsetZ = Random.Range(-bounds.extents.z, 0);
+        offsetZ = Random.Range(-bounds.extents.z, bounds.extents.z);
    }
 
    private IEnumerator SpawnRandom()
@@ -36,9 +36,10 @@ public class SpawnMachine : MonoBehaviour, UnitInterface
         while (randPositions.Count < amountToSpawn) {
                BoundsCalculator();
                randPos = bounds.center + new Vector3(offsetX, 0f, offsetZ);
-               if (!randPositions.Contains(randPos)) {
+               if (!randPositions.Contains(randPos) && randPos != new Vector3(0, 0, 0)) {
                     randPositions.Add(randPos);
-                    Instantiate(unit, randPos, unit.transform.rotation); 
+                    int randUnit = Random.Range(0, units.Count);
+                    Instantiate(units[randUnit], randPos, units[randUnit].transform.rotation); 
                }
                
                //space = randPos + new Vector3(0.5f, 0, 0.5f);
@@ -46,7 +47,6 @@ public class SpawnMachine : MonoBehaviour, UnitInterface
                yield return new WaitForSeconds(spawnInterval); 
         }
    
-      //StartCoroutine(PlayerStates._Instance.Blink());
       transform.parent.gameObject.GetComponent<UnitHandler>().StateReset();
 
       yield return null;

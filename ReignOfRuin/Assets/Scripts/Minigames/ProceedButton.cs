@@ -30,7 +30,7 @@ public class ProceedButton : MonoBehaviour
       if (GameObject.FindWithTag("Station") != null && sH.imEngaged)
          sH.StateProceed();
 
-      if (GameObject.FindWithTag("PlayerUnit") != null)
+      if (GameObject.FindWithTag("PlayerUnit") != null && uH.imEngaged)
          uH.StateProceed(); 
    } 
 

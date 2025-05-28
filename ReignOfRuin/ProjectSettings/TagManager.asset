@@ -5,7 +5,6 @@ TagManager:
   serializedVersion: 3
   tags:
   - PlayerUnit
-  - OpponentUnit
   - PlayerTroop
   - Station
   - InteractUI
@@ -13,6 +12,7 @@ TagManager:
   - Coin
   - Building
   - PlayerStronghold
+  - OpponentTroop
   layers:
   - Default
   - TransparentFX

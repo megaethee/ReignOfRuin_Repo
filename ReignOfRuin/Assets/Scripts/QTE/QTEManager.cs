@@ -208,9 +208,12 @@ public class QTEManager : MonoBehaviour
 
         onMinigameCompleted?.Invoke(score); // Notify listeners
 
-        sH.StateProceed();
+        if (score < maxAttempts)
+            sH.StateReset();
+        else
+            sH.StateProceed();
 
-        cueText.gameObject.transform.parent.gameObject.SetActive(false);
+        //cueText.gameObject.transform.parent.gameObject.SetActive(false);
 
         Destroy(anvilTrigger);
     }

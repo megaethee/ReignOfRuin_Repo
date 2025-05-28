@@ -20,10 +20,7 @@ public class PlayerStates : MonoBehaviour
     {
         playerPos = transform.position; 
 
-        //if (isEngaged == true)
-        //    gameObject.GetComponent<CapsuleCollider>().enabled = false;
-        //else
-        //    gameObject.GetComponent<CapsuleCollider>().enabled = true;
+        
     } 
 
     public IEnumerator Blink()
