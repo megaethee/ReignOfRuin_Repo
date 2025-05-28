@@ -27,6 +27,7 @@ public class WaitAndSelect : MonoBehaviour, UnitInterface
         displayCordsText = startTileUI.GetComponent<TextMeshProUGUI>();
 
         tC.teleCords.x = 0;
+        tC.teleCords.y = 0;
         displayCordsText.text = "Pink";
         displayCordsText.color = new Color32(236, 141, 255, 255);
     }
@@ -62,16 +63,19 @@ public class WaitAndSelect : MonoBehaviour, UnitInterface
         //}
         if (Input.GetKeyDown(KeyCode.Alpha1)) {
             tC.teleCords.x = 0;
+            tC.teleCords.y = 0;
             displayCordsText.text = "Pink";
             displayCordsText.color = new Color32(236, 141, 255, 255);
         }
         if (Input.GetKeyDown(KeyCode.Alpha2)) {
             tC.teleCords.x = 1;
+            tC.teleCords.y = 0;
             displayCordsText.text = "Yellow";
             displayCordsText.color = new Color32(255, 238, 131, 255);
         }
         if (Input.GetKeyDown(KeyCode.Alpha3)) {
             tC.teleCords.x = 2;
+            tC.teleCords.y = 0;
             displayCordsText.text = "Green";
             displayCordsText.color = new Color32(87, 217, 135, 255); 
         }
