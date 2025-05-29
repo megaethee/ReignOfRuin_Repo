@@ -2553,6 +2553,11 @@ Transform:
   - {fileID: 1565203530364598499}
   - {fileID: 3854806938014770433}
   - {fileID: 6092612980695348108}
+<<<<<<< HEAD
+=======
+  - {fileID: 1785522744302506051}
+  - {fileID: 8582553264173246534}
+>>>>>>> parent of 22b1b83 (Revert "Merge branch 'main' into Ethan's_Branch")
   - {fileID: 2831819940721228793}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3125,6 +3130,7 @@ PrefabInstance:
     m_TransformParent: {fileID: 8117227783342548832}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 8e6da3b890b36da4bac653b217ce6de8, type: 3}
+<<<<<<< HEAD
       propertyPath: m_LocalScale.x
       value: 398.75
       objectReference: {fileID: 0}
@@ -3137,16 +3143,26 @@ PrefabInstance:
       value: 398.75
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8e6da3b890b36da4bac653b217ce6de8, type: 3}
+=======
+>>>>>>> parent of 22b1b83 (Revert "Merge branch 'main' into Ethan's_Branch")
       propertyPath: m_LocalPosition.x
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8e6da3b890b36da4bac653b217ce6de8, type: 3}
       propertyPath: m_LocalPosition.y
+<<<<<<< HEAD
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8e6da3b890b36da4bac653b217ce6de8, type: 3}
       propertyPath: m_LocalPosition.z
       value: -0.75
+=======
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8e6da3b890b36da4bac653b217ce6de8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.66
+>>>>>>> parent of 22b1b83 (Revert "Merge branch 'main' into Ethan's_Branch")
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8e6da3b890b36da4bac653b217ce6de8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3176,10 +3192,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: -7511558181221131132, guid: 8e6da3b890b36da4bac653b217ce6de8, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 9158cdcec1be2024791a710be98c9dbc, type: 2}
+=======
+>>>>>>> parent of 22b1b83 (Revert "Merge branch 'main' into Ethan's_Branch")
     - target: {fileID: 919132149155446097, guid: 8e6da3b890b36da4bac653b217ce6de8, type: 3}
       propertyPath: m_Name
       value: Bridgetown 1
