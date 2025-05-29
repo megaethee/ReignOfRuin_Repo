@@ -83,6 +83,7 @@ public class UnitHandler : MonoBehaviour
          ranInto = true;
          //Debug.Log("I ran into something");
       }
-   }
+      
+   } 
    
 }
