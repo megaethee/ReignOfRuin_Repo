@@ -68,6 +68,10 @@ public class MinigameManager : MonoBehaviour
     private void StartMiniGame(MiniGame mG)
     {
         //instantiate minigame object here
-        GameObject miniGamePref = Instantiate(mG.mgObj, curPosition, mG.mgObj.transform.rotation);  
+        Vector3 offset = new Vector3(0, 0, 0);
+        if (curPosition.x < 4)
+            offset = new Vector3(2f, 0, 0);
+
+        GameObject miniGamePref = Instantiate(mG.mgObj, curPosition + offset, mG.mgObj.transform.rotation);  
     } 
 }
