@@ -20,6 +20,8 @@ public class AnvilTrigger : MonoBehaviour
 
     void Update()
     {
+        interactionPromptText.text = "";
+        
         // Player presses space near anvil to start minigame
         // Only triggers if the minigame is not already active
         if (!QTEGame.IsGameActive() && playerNearby && Input.GetKeyDown(KeyCode.Space))

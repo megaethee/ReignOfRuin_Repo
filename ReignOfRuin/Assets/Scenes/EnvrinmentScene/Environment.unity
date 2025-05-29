@@ -769,6 +769,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -37.08
       objectReference: {fileID: 0}
+    - target: {fileID: 5087356646914009702, guid: 87b6bddbbb4dae2449b4f8031e9c1844, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -923182488657201781, guid: 490e4a55f0b43494791e451fce7220e7, type: 3}
     - target: {fileID: 7003891110295897938, guid: 87b6bddbbb4dae2449b4f8031e9c1844, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.38
@@ -879,8 +883,6 @@ PrefabInstance:
     - {fileID: 1344987413746258578, guid: 87b6bddbbb4dae2449b4f8031e9c1844, type: 3}
     - {fileID: 684640315038714438, guid: 87b6bddbbb4dae2449b4f8031e9c1844, type: 3}
     - {fileID: 8369536830870672190, guid: 87b6bddbbb4dae2449b4f8031e9c1844, type: 3}
-    - {fileID: 5863988535721371569, guid: 87b6bddbbb4dae2449b4f8031e9c1844, type: 3}
-    - {fileID: 6980524986703843282, guid: 87b6bddbbb4dae2449b4f8031e9c1844, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8708457422354350060, guid: 87b6bddbbb4dae2449b4f8031e9c1844, type: 3}

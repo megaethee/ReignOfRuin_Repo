@@ -12,14 +12,17 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class AmbienceSound : MonoBehaviour
 {
-    [Tooltip("Trigger collider that defines the area where the ambience is active.")]
+    // Trigger collider that defines the area where the ambience is active.
     public Collider Area;
 
-    [Tooltip("GameObject representing the player to track.")]
+    // GameObject representing the player to track.
     public GameObject Player;
 
-    [Tooltip("Time in seconds to fade in/out the audio when entering/exiting.")]
+    // Time in seconds to fade in/out the audio when entering/exiting.
     public float fadeDuration = 1f;
+
+    // Max volume for ambience
+    public float maxVolume = 0.5f; 
 
     private AudioSource audioSource;          // Reference to the attached AudioSource
     private Coroutine fadeCoroutine;          // Stores currently running fade coroutine
@@ -81,8 +84,8 @@ public class AmbienceSound : MonoBehaviour
         if (fadeCoroutine != null)
             StopCoroutine(fadeCoroutine);
 
-        // Start fading volume from 0 to 1
-        fadeCoroutine = StartCoroutine(FadeAudio(0f, 1f));
+        // Fade from 0 to maxVolume 
+        fadeCoroutine = StartCoroutine(FadeAudio(0f, maxVolume));
     }
 
     // Starts the fade-out process
