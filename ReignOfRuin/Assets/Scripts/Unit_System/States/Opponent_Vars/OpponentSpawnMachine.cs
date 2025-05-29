@@ -35,8 +35,8 @@ public class OpponentSpawnMachine : MonoBehaviour, UnitInterface
    {
         while (randPositions.Count < amountToSpawn) {
                BoundsCalculator();
-               randPos = bounds.center + new Vector3(offsetX, 0f, offsetZ);
-               if (!randPositions.Contains(randPos) && randPos != new Vector3(0, 0, 0)) {
+               randPos = bounds.center + new Vector3(offsetX, 0.75f, offsetZ);
+               if (!randPositions.Contains(randPos) && randPos != new Vector3(0, 0.75f, 0)) {
                     randPositions.Add(randPos);
                     int randUnit = Random.Range(0, units.Count);
                     Instantiate(units[randUnit], randPos, units[randUnit].transform.rotation); 
