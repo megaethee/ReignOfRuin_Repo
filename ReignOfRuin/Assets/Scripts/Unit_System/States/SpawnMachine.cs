@@ -15,9 +15,9 @@ public class SpawnMachine : MonoBehaviour, UnitInterface
    [SerializeField] private List<Vector3> randPositions = new List<Vector3>();
 
    private void Awake()
-     {
-        bounds = transform.parent.gameObject.GetComponent<BoxCollider>().bounds;  
-     }
+   {
+      bounds = transform.parent.gameObject.GetComponent<BoxCollider>().bounds;  
+   }
 
    public void Again()
    {
