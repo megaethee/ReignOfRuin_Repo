@@ -13,6 +13,7 @@ TagManager:
   - Building
   - PlayerStronghold
   - OpponentTroop
+  - InGame
   layers:
   - Default
   - TransparentFX

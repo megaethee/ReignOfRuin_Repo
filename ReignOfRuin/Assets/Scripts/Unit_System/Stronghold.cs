@@ -5,12 +5,13 @@ using System.Collections.Generic;
 public class Stronghold : MonoBehaviour
 {
     public float health = 10;
-    public GameObject winLoseUI;
+    public GameObject winLoseUI, inGame;
 
     // Update is called once per frame
     void Awake()
     {
         winLoseUI = GameObject.Find("WinLose");
+        inGame = GameObject.FindWithTag("InGame");
     }
 
     void Update()
@@ -25,6 +26,6 @@ public class Stronghold : MonoBehaviour
         else if (gameObject.tag == "PlayerStronghold") winLoseUI.transform.GetChild(1).gameObject.SetActive(true);
 
         winLoseUI.transform.GetChild(2).gameObject.SetActive(true);
-        Destroy(transform.parent.gameObject); 
+        Destroy(inGame); 
     }
 }
