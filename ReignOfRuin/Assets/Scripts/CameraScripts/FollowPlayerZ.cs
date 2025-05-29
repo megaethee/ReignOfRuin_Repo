@@ -17,7 +17,7 @@ public class FollowPlayerZ : MonoBehaviour
     }
     public void ToggleOffset(){
         if(offsetOn){
-            cameraOffset -= cameraStartOffset;
+            cameraOffset = cameraStartOffset;
             offsetOn = false;
         }
         else{

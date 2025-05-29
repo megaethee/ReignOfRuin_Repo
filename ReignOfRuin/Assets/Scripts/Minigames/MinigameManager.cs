@@ -47,6 +47,7 @@ public class MinigameManager : MonoBehaviour
                 break;
             case UnitHandler.UnitType.Archer:
                 Debug.Log("I am archer");
+                sH.StateProceed();
                 //StartMiniGame(mgDataBase[1].miniGames[gameLvl]);
                 break;
             case UnitHandler.UnitType.Blacksmith:
@@ -55,7 +56,8 @@ public class MinigameManager : MonoBehaviour
                 break;
             case UnitHandler.UnitType.Wizard:
                 Debug.Log("I am a wizard");
-                StartMiniGame(mgDataBase[3].miniGames[gameLvl-1]);
+                sH.StateProceed();
+                //StartMiniGame(mgDataBase[3].miniGames[gameLvl-1]);
                 break;
         } 
         

@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6717861289312400412}
   - component: {fileID: 3559558448664489930}
-  - component: {fileID: 3551159303187391091}
   - component: {fileID: 3413211538187636272}
+  - component: {fileID: 4083479085188217951}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -55,22 +55,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2, y: 1, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3551159303187391091
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2980808628544728009}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3a5ef1ac0e966a49a5c5406c5381862, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueUI: {fileID: 0}
-  randDialogue:
-  - {fileID: 11400000, guid: d483d339e2cf4784cb911121600451fa, type: 2}
-  rB: {fileID: 0}
 --- !u!54 &3413211538187636272
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -98,6 +82,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &4083479085188217951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2980808628544728009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62ae77c8248cf1b4e9d96c669aa68367, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stationCamTransform: {fileID: 0}
+  dialogueUI: {fileID: 0}
+  dialogue: {fileID: 11400000, guid: d483d339e2cf4784cb911121600451fa, type: 2}
+  bounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
 --- !u!1 &4115559696171890312
 GameObject:
   m_ObjectHideFlags: 0
@@ -242,6 +244,8 @@ MonoBehaviour:
   health: 0
   dmg: 0
   finalTargCord: {x: 0, y: 0}
+  oppCords: {x: 0, y: 0}
+  targPos: {x: 0, y: 0, z: 0}
   opponentFound: 0
 --- !u!114 &1781484209925961747
 MonoBehaviour:
@@ -293,7 +297,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6717861289312400412}
@@ -396,7 +400,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 1
   maxStates: 2
-  unitType: 1
+  unitType: 3
   imEngaged: 0
   ranInto: 0
   minigameStarted: 0
@@ -440,9 +444,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9105154500654331848}
-  - component: {fileID: 2138949216977998206}
+  - component: {fileID: 3640010340299701906}
+  - component: {fileID: 1401738625220865135}
   m_Layer: 0
-  m_Name: WaitAndSelect
+  m_Name: Minigame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -463,7 +468,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7468379720747740358}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2138949216977998206
+--- !u!114 &3640010340299701906
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -472,8 +477,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 6685208345525089855}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0abcf949dd602914fabd56d77be9d5ad, type: 3}
+  m_Script: {fileID: 11500000, guid: deb4aabc7b7528a449b20f50f0af06dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tC: {fileID: 11400000, guid: 09019da5a91633541879fd6723e141aa, type: 2}
-  startTileUI: {fileID: 4222010329861735984, guid: 958280faac0e6db4ba8eb8ebbc532c8c, type: 3}
+--- !u!135 &1401738625220865135
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6685208345525089855}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 3.27
+  m_Center: {x: 0, y: 0, z: 0}

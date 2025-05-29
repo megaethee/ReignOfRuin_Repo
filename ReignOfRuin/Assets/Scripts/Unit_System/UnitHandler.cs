@@ -15,6 +15,7 @@ public class UnitHandler : MonoBehaviour
 
    public bool imEngaged, ranInto, minigameStarted;
    public int statMultiplier;
+   //public float intActOffset = 1.5f;
    public GameObject interactObj;
 
    public CameraZoomManager cameraZoomManager;
@@ -43,7 +44,7 @@ public class UnitHandler : MonoBehaviour
    {
       if (imEngaged && instantCounter < 1)
       {
-         interactObj = Instantiate(Resources.Load<GameObject>("Interaction_Indicator"), transform.position + new Vector3(0, 0.9f, 0), Resources.Load<GameObject>("Interaction_Indicator").transform.rotation);
+         interactObj = Instantiate(Resources.Load<GameObject>("Interaction_Indicator"), transform.position + new Vector3(0, 1.25f, 0), Resources.Load<GameObject>("Interaction_Indicator").transform.rotation);
          instantCounter++;
       }
       else if (!imEngaged && instantCounter >= 1)
