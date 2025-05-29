@@ -2220,6 +2220,7 @@ MonoBehaviour:
   notes:
   - Need to update GridManager everytime the lanes are changed
   - Minigame manager now goes from 1, 2, 3... rather than 0, 1, 2...
+  - Units move too fast, Dialogue moves too slow
 --- !u!4 &1335453708
 Transform:
   m_ObjectHideFlags: 0
@@ -4189,6 +4190,10 @@ PrefabInstance:
     - target: {fileID: 3094646545664456999, guid: 93e38fff73476f84aae0e42e6dd4d664, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834117292924692909, guid: 93e38fff73476f84aae0e42e6dd4d664, type: 3}
+      propertyPath: delay
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 5094781362733124248, guid: 93e38fff73476f84aae0e42e6dd4d664, type: 3}
       propertyPath: miniGames.Array.size
