@@ -12,7 +12,7 @@ public class Troop : MonoBehaviour, UnitInterface
     public float health, dmg;
     public Vector2Int finalTargCord, oppCords;
     public Vector3 targPos;
-    public bool opponentFound; 
+    public bool opponentFound;  
 
     private void Awake()
     { 
@@ -23,7 +23,8 @@ public class Troop : MonoBehaviour, UnitInterface
     public void Again()
     { 
         if (transform.parent.tag == "PlayerTroop") {
-            spawnRef.toRestart++;
+            
+            //spawnRef.toRestart++;
             StartCoroutine(PlayerStates._Instance.Blink());
 
         
@@ -75,30 +76,32 @@ public class Troop : MonoBehaviour, UnitInterface
 
     private IEnumerator MoveToGrid()
     {
+        transform.parent.parent.GetComponent<Animator>().SetBool("isMoving", true);
+
         float elapsedTime=0, hangTime=2f;
-        Vector3 curPos=transform.parent.position, curRot=transform.parent.eulerAngles;
+        Vector3 curPos=transform.parent.parent.position, curRot=transform.parent.parent.eulerAngles;
         //Vector3 targPos;
         if (transform.parent.tag == "PlayerTroop")
-            targPos=new Vector3(tC.teleCords.x, transform.parent.position.y, tC.teleCords.y);
+            targPos=new Vector3(tC.teleCords.x, transform.parent.parent.position.y, tC.teleCords.y);
         else if (transform.parent.tag == "OpponentTroop")
-            targPos=new Vector3(oppCords.x, transform.parent.position.y, oppCords.y);
+            targPos=new Vector3(oppCords.x, transform.parent.parent.position.y, oppCords.y);
 
         while (elapsedTime < hangTime) {
-            transform.parent.position = Vector3.Lerp(curPos, targPos, (elapsedTime/hangTime));
+            transform.parent.parent.position = Vector3.Lerp(curPos, targPos, (elapsedTime/hangTime));
 
             if (transform.parent.tag == "PlayerTroop") 
-                transform.parent.eulerAngles = Vector3.Lerp(curRot, Vector3.forward, (elapsedTime/hangTime));
+                transform.parent.parent.eulerAngles = Vector3.Lerp(curRot, Vector3.forward, (elapsedTime/hangTime));
             
             elapsedTime += Time.deltaTime;
             yield return null;
         }
 
-        transform.parent.position = targPos;
+        transform.parent.parent.position = targPos;
         if (transform.parent.tag == "PlayerTroop")
-            transform.parent.eulerAngles = Vector3.forward;
+            transform.parent.parent.eulerAngles = Vector3.forward;
         //this always needs to go before so it will get the path of movement right every time
-        troopStats.xPosition = Mathf.RoundToInt(transform.parent.position.x);
-        troopStats.yPosition = Mathf.RoundToInt(transform.parent.position.z); 
+        troopStats.xPosition = Mathf.RoundToInt(transform.parent.parent.position.x);
+        troopStats.yPosition = Mathf.RoundToInt(transform.parent.parent.position.z); 
 //setting this variable resolves the recompiling bug
         finalTargCord = troopStats.TargCordCompiler();
 
@@ -107,39 +110,48 @@ public class Troop : MonoBehaviour, UnitInterface
 
     public IEnumerator MoveOnGrid()
     {  
+        transform.parent.parent.GetComponent<Animator>().SetBool("isMoving", true);
+
         //probably gonna need to add lerping to this
-        if (transform.parent.position.x < GridManager._Instance.grid[finalTargCord].cords.x) {
-            for (; transform.parent.position.x < GridManager._Instance.grid[finalTargCord].cords.x; 
-                transform.parent.position = new Vector3(transform.parent.position.x+1, transform.parent.position.y, transform.parent.position.z)) {
-                
-                if (transform.parent.position.x  == 0) continue;
-                
+        if (transform.parent.parent.position.x < GridManager._Instance.grid[finalTargCord].cords.x)
+        {
+            for (; transform.parent.parent.position.x < GridManager._Instance.grid[finalTargCord].cords.x;
+                transform.parent.parent.position = new Vector3(transform.parent.parent.position.x + 1, transform.parent.parent.position.y, transform.parent.parent.position.z))
+            {
+
+                if (transform.parent.parent.position.x == 0) continue;
+
                 yield return new WaitForSeconds(troopStats.speed);
 
-                if (opponentFound == true) { 
+                if (opponentFound == true)
+                {
                     Debug.Log("I can't move");
                     yield break;
                 }
             }
-        } else if (transform.parent.position.x > GridManager._Instance.grid[finalTargCord].cords.x) {
-            for (; transform.parent.position.x > GridManager._Instance.grid[finalTargCord].cords.x; 
-                transform.parent.position = new Vector3(transform.parent.position.x-1, transform.parent.position.y, transform.parent.position.z)) {
-                
-                if (transform.parent.position.x  == 0) continue;
-                
+        }
+        else if (transform.parent.parent.position.x > GridManager._Instance.grid[finalTargCord].cords.x)
+        {
+            for (; transform.parent.parent.position.x > GridManager._Instance.grid[finalTargCord].cords.x;
+                transform.parent.parent.position = new Vector3(transform.parent.parent.position.x - 1, transform.parent.parent.position.y, transform.parent.parent.position.z))
+            {
+
+                if (transform.parent.parent.position.x == 0) continue;
+
                 yield return new WaitForSeconds(troopStats.speed);
 
-                if (opponentFound == true) {
+                if (opponentFound == true)
+                {
                     Debug.Log("I can't move");
                     yield break;
                 }
             }
         }
         if (transform.parent.tag == "PlayerTroop") { 
-            for (; transform.parent.position.z < GridManager._Instance.grid[finalTargCord].cords.y; 
-                transform.parent.position = new Vector3(transform.parent.position.x, transform.parent.position.y, transform.parent.position.z+1)) { 
+            for (; transform.parent.parent.position.z < GridManager._Instance.grid[finalTargCord].cords.y; 
+                transform.parent.parent.position = new Vector3(transform.parent.parent.position.x, transform.parent.parent.position.y, transform.parent.parent.position.z+1)) { 
                 
-                if (transform.parent.position.z == 0) continue;
+                if (transform.parent.parent.position.z == 0) continue;
 
                 yield return new WaitForSeconds(troopStats.speed);
     //this resolves the stopping too late issue
@@ -150,10 +162,10 @@ public class Troop : MonoBehaviour, UnitInterface
             }
         }
         else if (transform.parent.tag == "OpponentTroop") {
-            for (; transform.parent.position.z > 0; 
-                transform.parent.position = new Vector3(transform.parent.position.x, transform.parent.position.y, transform.parent.position.z-1)) { 
+            for (; transform.parent.parent.position.z > 0; 
+                transform.parent.parent.position = new Vector3(transform.parent.parent.position.x, transform.parent.parent.position.y, transform.parent.parent.position.z-1)) { 
                 
-                if (transform.parent.position.z == 0) continue;
+                if (transform.parent.parent.position.z == 0) continue;
 
                 yield return new WaitForSeconds(troopStats.speed);
     //this resolves the stopping too late issue
@@ -170,7 +182,7 @@ public class Troop : MonoBehaviour, UnitInterface
     void Update()
     {
         if (health <= 0)
-            Destroy(transform.parent.gameObject);
+            Destroy(transform.parent.parent.gameObject);
          
     } 
 

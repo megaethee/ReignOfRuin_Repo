@@ -17,6 +17,7 @@ public class UnitHandler : MonoBehaviour
    public int statMultiplier;
    //public float intActOffset = 1.5f;
    public GameObject interactObj;
+   public Animator animator;
 
    public CameraZoomManager cameraZoomManager;
 
@@ -25,9 +26,11 @@ public class UnitHandler : MonoBehaviour
 
    private void Awake()
    {
+      //if (animator == null)
+      animator = transform.parent.GetComponent<Animator>();
       cameraZoomManager = GameObject.Find("Cameras").GetComponent<CameraZoomManager>();
       maxStates = transform.childCount;
-      gameObject.tag = "Untagged";
+      gameObject.tag = "Untagged"; 
       transform.GetChild(0).gameObject.GetComponent<UnitInterface>().Again();
       StartCoroutine(WaitForInstance()); 
    } 
@@ -81,6 +84,7 @@ public class UnitHandler : MonoBehaviour
    {
       if (other.tag == "Building" || other.tag == "Station") {
          ranInto = true;
+         animator.SetBool("isMoving", false);
          //Debug.Log("I ran into something");
       }
       
