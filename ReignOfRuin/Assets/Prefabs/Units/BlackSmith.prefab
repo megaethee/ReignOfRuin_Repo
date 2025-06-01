@@ -113,7 +113,7 @@ GameObject:
   - component: {fileID: 1502477090259453049}
   - component: {fileID: 2626585722549571375}
   - component: {fileID: 4344707097070472264}
-  - component: {fileID: 7048411075496931292}
+  - component: {fileID: 2210309705971796301}
   m_Layer: 0
   m_Name: Troop
   m_TagString: Untagged
@@ -240,11 +240,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   troopStats: {fileID: 11400000, guid: af66986226e66454087a698ba9bb6d77, type: 2}
   tC: {fileID: 11400000, guid: 09019da5a91633541879fd6723e141aa, type: 2}
+  spawnRef: {fileID: 0}
   health: 0
   dmg: 0
   finalTargCord: {x: 0, y: 0}
+  oppCords: {x: 0, y: 0}
+  targPos: {x: 0, y: 0, z: 0}
   opponentFound: 0
---- !u!114 &7048411075496931292
+--- !u!114 &2210309705971796301
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -253,11 +256,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 4115559696171890312}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37d24b15c75e37f4dbb9c359b2feedcb, type: 3}
+  m_Script: {fileID: 11500000, guid: 44948a29718cfe14fa383634d17d95d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   troop: {fileID: 4344707097070472264}
   enemy: {fileID: 0}
+  moveBackCords: {x: 0, y: 0}
 --- !u!1 &4649626281728029866
 GameObject:
   m_ObjectHideFlags: 0
