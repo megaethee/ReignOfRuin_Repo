@@ -23,8 +23,7 @@ public class Troop : MonoBehaviour, UnitInterface
     public void Again()
     { 
         if (transform.parent.tag == "PlayerTroop") {
-            if (spawnRef != null)
-                spawnRef.toRestart++;
+            spawnRef.toRestart++;
             StartCoroutine(PlayerStates._Instance.Blink());
 
         
