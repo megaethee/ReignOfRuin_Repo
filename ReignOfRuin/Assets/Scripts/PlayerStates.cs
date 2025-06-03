@@ -24,17 +24,14 @@ public class PlayerStates : MonoBehaviour
         //    gameObject.GetComponent<CapsuleCollider>().enabled = false;
         //else
         //    gameObject.GetComponent<CapsuleCollider>().enabled = true;
+    } 
+
+    public IEnumerator Blink()
+    { 
+        CapsuleCollider cC = gameObject.GetComponent<CapsuleCollider>();
+
+        cC.enabled = false;
+        yield return new WaitForSeconds(0.1f); 
+        cC.enabled = true;      
     }
-
-    //public void Blink()
-    //{
-    //    StartCoroutine(BlinkRoutine());
-    //}
-
-    //private IEnumerator BlinkRoutine()
-    //{ 
-    //    gameObject.GetComponent<CapsuleCollider>().enabled = false;
-    //    yield return new WaitForSeconds(0.1f); 
-    //    gameObject.GetComponent<CapsuleCollider>().enabled = true; 
-    //}
 }

@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 139b555e94b20fd49a59bc52289ae9cf, type: 3}
   m_Name: TeleCords
   m_EditorClassIdentifier: 
-  teleCords: {x: 0, y: 0}
+  teleCords: {x: 2, y: 0}
