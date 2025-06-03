@@ -26,8 +26,8 @@ public class CameraToggle : MonoBehaviour
 
     void LaneOn(){
         if (CameraManager == 1){
-            Camera1.rect = new Rect(0, 0, .8f, 1);
-            Camera2.rect = new Rect(.8f, 0, 1, 1);
+            Camera1.rect = new Rect(0, 0, 1f, 1);
+            Camera2.rect = new Rect(.94f, 0, 1, 1);
             CameraManager = 0;
         }
         else{
