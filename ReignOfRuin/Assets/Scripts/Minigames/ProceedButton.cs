@@ -30,7 +30,7 @@ public class ProceedButton : MonoBehaviour
       if (GameObject.FindWithTag("Station") != null && sH.imEngaged)
          sH.StateProceed();
 
-      if (GameObject.FindWithTag("PlayerUnit") != null)
+      if (GameObject.FindWithTag("PlayerUnit") != null && uH.imEngaged)
          uH.StateProceed(); 
    } 
 
@@ -41,7 +41,7 @@ public class ProceedButton : MonoBehaviour
 
    public void MinigameProceed()
    {
-      //FindUnit();
+      FindUnit();
       //Debug.Log("Time for a minigame");
       MinigameManager._Instance.InitMinigame(transform.GetSiblingIndex(), sH);
       //Destroy(transform.parent.gameObject);

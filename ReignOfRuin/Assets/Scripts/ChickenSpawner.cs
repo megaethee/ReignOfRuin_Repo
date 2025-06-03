@@ -1,22 +1,30 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public class ChickenSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject chickenPrefab;
-    [SerializeField] private float minX;
-    [SerializeField] private float maxX;
-    [SerializeField] private float minZ;
-    [SerializeField] private float maxZ;
+    [SerializeField] private Bounds minigameBounds;
+    //[SerializeField] private float minX;
+    //[SerializeField] private float maxX;
+    //[SerializeField] private float minZ;
+    //[SerializeField] private float maxZ;
     public UnitHandler stationHandler;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {   
+        minigameBounds = GetComponent<BoxCollider>().bounds;
+
         for (int i = 0; i < 6; i++){
-            Instantiate(chickenPrefab, new Vector3(Random.Range(minX, maxX), 0.75f,Random.Range(minZ,maxZ)), Quaternion.identity);
+            Instantiate(chickenPrefab, minigameBounds.center + new Vector3(Random.Range(-minigameBounds.extents.x, minigameBounds.extents.x), 0.75f, Random.Range(-minigameBounds.extents.z, minigameBounds.extents.z)), Quaternion.identity);
         }
         if (GameObject.FindWithTag("Station") != null)
+        {
             stationHandler = GameObject.FindWithTag("Station").GetComponent<UnitHandler>();
+            stationHandler.minigameStarted = true;
+        }
     }
 
     // Update is called once per frame
