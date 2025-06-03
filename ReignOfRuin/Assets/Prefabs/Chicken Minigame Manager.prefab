@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a01d988423b285e469209d4e44fbf299, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinPrefab: {fileID: 990845373040312642, guid: fcf788b6c9688074ebb2d4e2ecd2ee01, type: 3}
+  chickenPrefab: {fileID: 990845373040312642, guid: fcf788b6c9688074ebb2d4e2ecd2ee01, type: 3}
   minX: -4
   maxX: 5
   minZ: -12

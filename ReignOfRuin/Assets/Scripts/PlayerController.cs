@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     private Vector2 move;
     public int CoinCounter = 0;
 
+    public GameObject arrow;
+
     public void OnMove(InputAction.CallbackContext context)
     {
         move = context.ReadValue<Vector2>();
@@ -29,6 +31,12 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         movePlayer();
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            //and the archer minigame is on shoot the arrow
+            //Instantiate(arrow, transform.position, arrow.transform.rotation);
+        }
     }
 
     public void movePlayer()
