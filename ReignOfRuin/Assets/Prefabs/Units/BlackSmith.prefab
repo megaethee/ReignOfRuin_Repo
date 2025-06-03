@@ -238,7 +238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bcacbd07f77f684f9289517f789ac34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  troopStats: {fileID: 11400000, guid: af66986226e66454087a698ba9bb6d77, type: 2}
+  troopStats: {fileID: 11400000, guid: 549e54a44f5a1e947a899d39d56cc341, type: 2}
   tC: {fileID: 11400000, guid: 09019da5a91633541879fd6723e141aa, type: 2}
   spawnRef: {fileID: 0}
   health: 0
@@ -262,6 +262,7 @@ MonoBehaviour:
   troop: {fileID: 4344707097070472264}
   enemy: {fileID: 0}
   moveBackCords: {x: 0, y: 0}
+  movedBack: 0
 --- !u!1 &4649626281728029866
 GameObject:
   m_ObjectHideFlags: 0

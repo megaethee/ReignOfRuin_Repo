@@ -41,9 +41,11 @@ public class Blacksmith : MonoBehaviour
     private IEnumerator HealStronghold()
     {
         while (true) { 
-            if (enemy == null) {
+            if (enemy != null) {
                 Debug.Log("I am healing");
-                enemy.GetComponent<Stronghold>().health += troop.dmg;
+                Stronghold stronghold = enemy.GetComponent<Stronghold>();
+                if (stronghold.health < stronghold.baseHealth) 
+                    stronghold.health += troop.dmg;
 
                 yield return new WaitForSeconds(troop.troopStats.speed);
             } else {
@@ -61,7 +63,7 @@ public class Blacksmith : MonoBehaviour
 
             yield return new WaitForSeconds(troop.troopStats.speed);
         
-            //troop.opponentFound = false;
+            troop.opponentFound = false;
             StartCoroutine(MoveBack());
             
             yield break;
