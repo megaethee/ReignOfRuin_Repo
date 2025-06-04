@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEngine.UI;
 
 public class AnvilTrigger : MonoBehaviour
 {
@@ -19,7 +20,7 @@ public class AnvilTrigger : MonoBehaviour
 
     void Update()
     {
-        interactionPromptText.text = "";
+        // interactionPromptText.text = ""; was the issue. This was being called every frame.
         
         // Player presses space near anvil to start minigame
         // Only triggers if the minigame is not already active
@@ -43,6 +44,9 @@ public class AnvilTrigger : MonoBehaviour
 
             // Show prompt if minigame isn't already running
             if (!QTEGame.IsGameActive() && interactionPromptText != null)
+
+                // This line is the issue for text not showing up
+                interactionPromptText.color = Color.white;
                 interactionPromptText.text = "Press Space to Start Smithing";
         }
     }
