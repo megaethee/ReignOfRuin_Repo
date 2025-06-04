@@ -144,6 +144,8 @@ MonoBehaviour:
   health: 0
   dmg: 0
   finalTargCord: {x: 0, y: 0}
+  oppCords: {x: 0, y: 0}
+  targPos: {x: 0, y: 0, z: 0}
   opponentFound: 0
 --- !u!114 &7048411075496931292
 MonoBehaviour:

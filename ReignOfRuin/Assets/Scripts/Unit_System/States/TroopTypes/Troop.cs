@@ -7,6 +7,7 @@ public class Troop : MonoBehaviour, UnitInterface
     //turn this into two scripts
     public TroopStats troopStats;   
     public TeleCords tC; 
+    public SpawnMachine spawnRef;
 
     public float health, dmg;
     public Vector2Int finalTargCord, oppCords;
@@ -22,6 +23,8 @@ public class Troop : MonoBehaviour, UnitInterface
     public void Again()
     { 
         if (transform.parent.tag == "PlayerTroop") {
+            if (spawnRef != null)
+                spawnRef.toRestart++;
             StartCoroutine(PlayerStates._Instance.Blink());
 
         

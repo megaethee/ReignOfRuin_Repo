@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.5
   xPosition: 0
-  yPosition: 8
-  health: 15
+  yPosition: 0
+  health: 20
   dmg: 1.5
-  path: 2
+  path: 3
