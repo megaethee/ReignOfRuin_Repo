@@ -169,7 +169,7 @@ public class QTEManager : MonoBehaviour
     // Waits briefly before showing next cue, to give time for "Nice!" or "Miss!" to show
     IEnumerator WaitBeforeNextCue()
     {
-        yield return new WaitForSeconds(1.0f); // Wait 1 second to show feedback
+        yield return new WaitForSeconds(1f); // Wait 1 second to show feedback
         StartCoroutine(WaitAndShowCue());      // Then prepare next cue
     }
 
