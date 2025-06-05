@@ -3088,6 +3088,10 @@ PrefabInstance:
       propertyPath: mgDataBase.Array.data[2].miniGames.Array.data[2].mgObj
       value: 
       objectReference: {fileID: 1999506474819776649, guid: 701b942560cc36e4aa5e6377b21d9a69, type: 3}
+    - target: {fileID: 5241475698577721454, guid: 93e38fff73476f84aae0e42e6dd4d664, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8608430938312615269, guid: 93e38fff73476f84aae0e42e6dd4d664, type: 3}
       propertyPath: gridSize.y
       value: 32
