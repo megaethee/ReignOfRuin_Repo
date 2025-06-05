@@ -17,9 +17,6 @@ public class ProceedButton : MonoBehaviour
 
    public void FindUnit()
    {
-      sH = null;
-      uH = null;
-
       if (GameObject.FindWithTag("PlayerUnit") != null)
          uH = GameObject.FindWithTag("PlayerUnit").GetComponent<UnitHandler>();
       if (GameObject.FindWithTag("Station") != null)

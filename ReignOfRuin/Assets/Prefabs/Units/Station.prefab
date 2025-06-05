@@ -369,14 +369,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unit: {fileID: 4649626281728029866, guid: 0e323416b6def5e439f56fbcb18d7d32, type: 3}
-  unitObj: {fileID: 0}
   bounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   offsetX: 0
   offsetZ: 0
   amountToSpawn: 2
-  toRestart: 0
   spawnInterval: 0.05
   randPos: {x: 0, y: 0, z: 0}
   space: {x: 0, y: 0, z: 0}

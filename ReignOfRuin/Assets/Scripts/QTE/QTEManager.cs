@@ -22,7 +22,7 @@ public class QTEManager : MonoBehaviour
     public int maxAttempts = 5;                         // How many prompts total
 
     // References
-    public GameObject player, anvilTrigger;             // Reference to player GameObject
+    public GameObject player, anvilTrigger;                           // Reference to player GameObject
     public PlayerController playerMovementScript;       // Player movement script to disable during minigame
     public UnitHandler sH;
 
@@ -39,7 +39,7 @@ public class QTEManager : MonoBehaviour
     void Awake()
     {
         // Make sure none of the prompt text and score text UI is visible on game start
-        // cueText.gameObject.transform.parent.gameObject.SetActive(false);
+        //cueText.gameObject.transform.parent.gameObject.SetActive(false);
         cueText.text = "";
         scoreText.text = "";
 
@@ -153,6 +153,7 @@ public class QTEManager : MonoBehaviour
     // Displays cue and enables hit detection
     void ShowCue()
     {
+        cueText.text = "";
         cueText.color = Color.white;
         cueText.text = "Hit the Anvil! (Spacebar)";
         timer = 0f;
@@ -162,6 +163,7 @@ public class QTEManager : MonoBehaviour
     // Waits randomly before showing next cue
     IEnumerator WaitAndShowCue()
     {
+        cueText.text = ""; // Clear cue
         yield return new WaitForSeconds(Random.Range(cueDelayRange.x, cueDelayRange.y));
         ShowCue();
     }

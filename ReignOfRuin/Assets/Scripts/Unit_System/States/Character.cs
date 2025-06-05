@@ -15,19 +15,18 @@ public class Character : MonoBehaviour, UnitInterface
    GameObject canvas;  
 
    private void Awake()
-   {  
-      Again();
+   { 
+      unitHandler = transform.parent.gameObject.GetComponent<UnitHandler>();
+      //rB = gameObject.GetComponent<Rigidbody>();
+      StartCoroutine(Orbit());
+
+      //Again();
+      canvas = GameObject.Find("Canvas");  
       //cameraZoomManager = GameObject.Find("Cameras").GetComponent<CameraZoomManager>();
    }  
 
    public void Again()
    {
-      unitHandler = transform.parent.gameObject.GetComponent<UnitHandler>();
-      //rB = gameObject.GetComponent<Rigidbody>();
-      StartCoroutine(Orbit());
-
-      canvas = GameObject.Find("Canvas");  
-
       transform.parent.gameObject.tag = "Untagged";   
       
       if (dialogueUI == null)
@@ -71,32 +70,24 @@ public class Character : MonoBehaviour, UnitInterface
 
    private IEnumerator Orbit()
    {
-      yield return new WaitForSeconds(1f);
-
-      unitHandler.animator.SetBool("isMoving", true);
       //no need for lerp with Rigidbody.MovePosition() 
       float elapsedTime=0, hangTime=2f;
-      Vector3 curPos = transform.parent.parent.position;
+      Vector3 curPos = transform.parent.position;
 
-      Vector3 targPos = new Vector3(Random.Range(curPos.x-3, curPos.x+3), transform.parent.parent.position.y, Random.Range(curPos.z-3, curPos.z+3));
-
-      transform.parent.parent.rotation = Quaternion.LookRotation(targPos - curPos);
+      Vector3 targPos = new Vector3(Random.Range(curPos.x-3, curPos.x+3), transform.parent.position.y, Random.Range(curPos.z-3, curPos.z+3));
       
       while (elapsedTime < hangTime) { 
-         if (unitHandler.imEngaged == true || unitHandler.ranInto == true) {
-            unitHandler.animator.SetBool("isMoving", false);
+         if (unitHandler.imEngaged == true || unitHandler.ranInto == true) 
             yield break;  
-         }
 
-         transform.parent.parent.position = Vector3.Lerp(curPos, targPos, (elapsedTime/hangTime));
+         transform.parent.position = Vector3.Lerp(curPos, targPos, (elapsedTime/hangTime));
          //rB.MovePosition(curPos + (targPos-curPos) * (elapsedTime/hangTime));
 
          elapsedTime += Time.deltaTime;
          yield return null; 
       } 
-
-      unitHandler.animator.SetBool("isMoving", false); 
       
+      yield return new WaitForSeconds(1f);
       StartCoroutine(Orbit());
    }
 
@@ -114,8 +105,6 @@ public class Character : MonoBehaviour, UnitInterface
    public void DestroyUI()
    { 
       StopCoroutine(Orbit());
-
-      unitHandler.animator.SetBool("isMoving", false);
       //Destroy(dialogueObj);
       dialogueUI.SetActive(false);
 
