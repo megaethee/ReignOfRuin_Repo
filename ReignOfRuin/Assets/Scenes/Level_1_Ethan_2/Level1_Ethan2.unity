@@ -3526,6 +3526,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5959540048247402973, guid: 3b7fccb4c764d344ca95f1121a51892d, type: 3}
+      propertyPath: unit
+      value: 
+      objectReference: {fileID: 6568939897928459682, guid: d15c6fbc9378c77408b86b2c48c112e1, type: 3}
     - target: {fileID: 8274902384492132313, guid: 3b7fccb4c764d344ca95f1121a51892d, type: 3}
       propertyPath: stationCamTransform
       value: 
@@ -3596,6 +3600,14 @@ PrefabInstance:
     - target: {fileID: 4934649635396026382, guid: 48a73805f47a21447a0e6b53a7639f22, type: 3}
       propertyPath: m_Name
       value: Peasant_Blacksmith
+      objectReference: {fileID: 0}
+    - target: {fileID: 5266244332434498330, guid: 48a73805f47a21447a0e6b53a7639f22, type: 3}
+      propertyPath: unit
+      value: 
+      objectReference: {fileID: 2013473919912703004, guid: 7f63133c5a072bf4eb0fab77ff2b8065, type: 3}
+    - target: {fileID: 5266244332434498330, guid: 48a73805f47a21447a0e6b53a7639f22, type: 3}
+      propertyPath: amountToSpawn
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7599723939904070942, guid: 48a73805f47a21447a0e6b53a7639f22, type: 3}
       propertyPath: stationCamTransform
@@ -3693,6 +3705,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Peasant_Archer_sH
       objectReference: {fileID: 0}
+    - target: {fileID: 845920688037595734, guid: f810518feadaa224986ded261f30f2a1, type: 3}
+      propertyPath: unit
+      value: 
+      objectReference: {fileID: 1390663230797455198, guid: fa9e8c285c3eca241abfe1524580eee4, type: 3}
     - target: {fileID: 3428892843304027298, guid: f810518feadaa224986ded261f30f2a1, type: 3}
       propertyPath: stationCamTransform
       value: 
