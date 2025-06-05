@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
@@ -8,6 +10,8 @@ public class PlayerController : MonoBehaviour
     private Vector2 move;
     public int CoinCounter = 0;
     public GameObject Arrow;
+    public Vector3 movement;
+    public bool canMove, stopper;
 
     [SerializeField]
     private Rigidbody rB;
@@ -29,21 +33,31 @@ public class PlayerController : MonoBehaviour
             Destroy(gameObject);
         }
 
+        canMove = true;
+        stopper = false;
         rB = GetComponent<Rigidbody>();
     }
     // Update is called once per frame
     void Update()
     {
-        movePlayer();
+        if (canMove)
+            movePlayer();
+        else if (!canMove && stopper) {
+            StartCoroutine(MoveBack()); 
+            stopper = false;
+        }           
+    }
 
-        // if (Input.GetKeyDown(KeyCode.Space)) {
-        //     Instantiace(Arrow, transform.position, Arrow.transform.rotation);
-        // }
+    private IEnumerator MoveBack()
+    {
+        transform.Translate(-movement * speed * Time.deltaTime, Space.World);
+        yield return new WaitForSeconds(0.5f);
+        canMove = true;
     }
 
     public void movePlayer()
     {
-        Vector3 movement = new Vector3(move.x, 0f, move.y);
+        movement = new Vector3(move.x, 0f, move.y);
 
         if (movement == Vector3.zero)
             GetComponent<Animator>().SetBool("isMoving", false);
@@ -65,6 +79,13 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(other.gameObject);
             CoinCounter++;
+        }
+
+        if (other.tag == "Building")
+        {
+            Debug.Log("STOOOOP");
+            stopper = true;
+            canMove = false; 
         }
         
     }
