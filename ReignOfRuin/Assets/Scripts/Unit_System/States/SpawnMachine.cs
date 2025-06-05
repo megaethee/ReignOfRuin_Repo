@@ -42,18 +42,19 @@ public class SpawnMachine : MonoBehaviour, UnitInterface
    {
         while (randPositions.Count < amountToSpawn) {
                BoundsCalculator();
-               randPos = bounds.center + new Vector3(offsetX, 0f, offsetZ);
+               randPos = bounds.center + new Vector3(offsetX, -1, offsetZ);
                if (!randPositions.Contains(randPos)) {
                     randPositions.Add(randPos);
                     unitObj = Instantiate(unit, randPos, unit.transform.rotation); 
-                    unitObj.transform.GetChild(2).GetComponent<Troop>().spawnRef = this;
+                    unitObj.transform.GetChild(0).GetChild(2).GetComponent<Troop>().spawnRef = this;
                }
                
                //space = randPos + new Vector3(0.5f, 0, 0.5f);
                
                yield return new WaitForSeconds(spawnInterval); 
         }
-   
+
+      transform.parent.tag = "Untagged"; 
       //StartCoroutine(PlayerStates._Instance.Blink());
       //transform.parent.gameObject.GetComponent<UnitHandler>().StateReset();
 
