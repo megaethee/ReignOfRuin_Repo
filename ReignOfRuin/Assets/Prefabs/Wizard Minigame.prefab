@@ -236,7 +236,7 @@ GameObject:
   - component: {fileID: 2248403916994559853}
   - component: {fileID: 2471203126176561922}
   m_Layer: 0
-  m_Name: Slots Minigame
+  m_Name: Wizard Minigame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
