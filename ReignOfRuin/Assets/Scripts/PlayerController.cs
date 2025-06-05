@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     public float speed;
     private Vector2 move;
     public int CoinCounter = 0;
+    public GameObject Arrow;
 
     [SerializeField]
     private Rigidbody rB;
@@ -34,6 +35,10 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         movePlayer();
+
+        // if (Input.GetKeyDown(KeyCode.Space)) {
+        //     Instantiace(Arrow, transform.position, Arrow.transform.rotation);
+        // }
     }
 
     public void movePlayer()

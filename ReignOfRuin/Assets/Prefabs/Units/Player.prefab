@@ -1850,6 +1850,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   CoinCounter: 0
+  Arrow: {fileID: 4770258989410254132, guid: aa56e8c4148a0db4387064e5d58c6f03, type: 3}
   rB: {fileID: 0}
 --- !u!114 &477544173013290972
 MonoBehaviour:
