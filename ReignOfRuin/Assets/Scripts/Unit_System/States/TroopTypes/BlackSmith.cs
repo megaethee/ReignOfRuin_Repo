@@ -72,6 +72,8 @@ public class Blacksmith : MonoBehaviour
 
     private IEnumerator MoveBack()
     {
+        troop.anim.SetBool("isMoving", true);
+        troop.anim.SetBool("isAttacking", false);
         movedBack = true;
         Debug.Log(movedBack);
         //enemy = null; 
