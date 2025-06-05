@@ -129,7 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cIndex: 0
   maxButtons: 0
-  selectRing: {fileID: 0}
+  selectRing: {fileID: 2865488059910258072}
 --- !u!1 &2401389381619063753
 GameObject:
   m_ObjectHideFlags: 0
