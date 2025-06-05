@@ -3651,6 +3651,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6568939897928459682, guid: d15c6fbc9378c77408b86b2c48c112e1, type: 3}
     - target: {fileID: 8274902384492132313, guid: 3b7fccb4c764d344ca95f1121a51892d, type: 3}
+      propertyPath: dialogue
+      value: 
+      objectReference: {fileID: 11400000, guid: 49f75d9a961e95948b8d7dabf6c67780, type: 2}
+    - target: {fileID: 8274902384492132313, guid: 3b7fccb4c764d344ca95f1121a51892d, type: 3}
       propertyPath: stationCamTransform
       value: 
       objectReference: {fileID: 1331247847}
@@ -3730,6 +3734,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7599723939904070942, guid: 48a73805f47a21447a0e6b53a7639f22, type: 3}
+      propertyPath: dialogue
+      value: 
+      objectReference: {fileID: 11400000, guid: 113703ead1df8f146983aa0e765b332d, type: 2}
+    - target: {fileID: 7599723939904070942, guid: 48a73805f47a21447a0e6b53a7639f22, type: 3}
       propertyPath: stationCamTransform
       value: 
       objectReference: {fileID: 275188391}
@@ -3755,6 +3763,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Peasant_Farmer_sH
       objectReference: {fileID: 0}
+    - target: {fileID: 2580382612929611797, guid: bab0cec46220ff84bbb7e77a18ec3239, type: 3}
+      propertyPath: dialogue
+      value: 
+      objectReference: {fileID: 11400000, guid: 6279059d298855e4bb41b0df68e7ada2, type: 2}
     - target: {fileID: 2580382612929611797, guid: bab0cec46220ff84bbb7e77a18ec3239, type: 3}
       propertyPath: stationCamTransform
       value: 
@@ -3829,6 +3841,10 @@ PrefabInstance:
       propertyPath: unit
       value: 
       objectReference: {fileID: 1390663230797455198, guid: fa9e8c285c3eca241abfe1524580eee4, type: 3}
+    - target: {fileID: 3428892843304027298, guid: f810518feadaa224986ded261f30f2a1, type: 3}
+      propertyPath: dialogue
+      value: 
+      objectReference: {fileID: 11400000, guid: be4c6f4d26ab9d041809372ff29b10c1, type: 2}
     - target: {fileID: 3428892843304027298, guid: f810518feadaa224986ded261f30f2a1, type: 3}
       propertyPath: stationCamTransform
       value: 
