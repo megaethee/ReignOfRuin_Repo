@@ -54,10 +54,12 @@ MonoBehaviour:
   minigameAmbience: {fileID: 5545296388168480014}
   areaAmbience: {fileID: 0}
   hitWindow: 2
-  cueDelayRange: {x: 2, y: 3}
+  cueDelayRange: {x: 1, y: 2}
   maxAttempts: 5
   player: {fileID: 0}
+  anvilTrigger: {fileID: 0}
   playerMovementScript: {fileID: 0}
+  sH: {fileID: 0}
   onMinigameCompleted:
     m_PersistentCalls:
       m_Calls: []
