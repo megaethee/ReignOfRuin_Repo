@@ -20,11 +20,14 @@ public class UnitHandler : MonoBehaviour
 
    public CameraZoomManager cameraZoomManager;
 
+   public Animator animator;
+
    [SerializeField] 
    private int instantCounter = 0;
 
    private void Awake()
    {
+      animator = transform.parent.GetComponent<Animator>();
       cameraZoomManager = GameObject.Find("Cameras").GetComponent<CameraZoomManager>();
       maxStates = transform.childCount;
       gameObject.tag = "Untagged";
