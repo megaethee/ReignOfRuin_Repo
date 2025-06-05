@@ -32,10 +32,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 6573962070788732231}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -305.34558, y: -28.6654}
-  m_SizeDelta: {x: 252.7384, y: 129.7183}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -275.87, y: 0.0000076293945}
+  m_SizeDelta: {x: -539.0055, y: -107.2719}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7544961202518570228
 CanvasRenderer:
@@ -165,10 +165,10 @@ RectTransform:
   - {fileID: 5067183040294481917}
   m_Father: {fileID: 6573962070788732231}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -8.636719, y: -29.01065}
-  m_SizeDelta: {x: 240, y: 119}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: -29.01065}
+  m_SizeDelta: {x: -551.7439, y: 119}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &433018813237601675
 CanvasRenderer:
@@ -313,10 +313,10 @@ RectTransform:
   - {fileID: 2346549295168917398}
   m_Father: {fileID: 6573962070788732231}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -305, y: -29.01065}
-  m_SizeDelta: {x: 240, y: 119}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -275.87195, y: 0}
+  m_SizeDelta: {x: -551.7439, y: -117.990204}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8754859821664270386
 CanvasRenderer:
@@ -461,10 +461,10 @@ RectTransform:
   - {fileID: 5823283202097463329}
   m_Father: {fileID: 6573962070788732231}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 286, y: -29.01065}
-  m_SizeDelta: {x: 240, y: 119}
+  m_SizeDelta: {x: -551.7439, y: -117.990204}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4303858881137143078
 CanvasRenderer:
@@ -672,8 +672,8 @@ MonoBehaviour:
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMin: 1
+  m_fontSizeMax: 100
   m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -810,8 +810,8 @@ MonoBehaviour:
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMin: 1
+  m_fontSizeMax: 100
   m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -948,8 +948,8 @@ MonoBehaviour:
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMin: 1
+  m_fontSizeMax: 100
   m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
