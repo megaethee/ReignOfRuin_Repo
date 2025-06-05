@@ -1,15 +1,21 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 public class Stronghold : MonoBehaviour
 {
     public float health = 10, baseHealth;
     public GameObject winLoseUI, inGame;
+    public Slider healthSlider;
 
     // Update is called once per frame
     void Awake()
     {
+        //if (tag == "PlayerStronghold")
+            //healthSlider.maxValue = health;
         baseHealth = health;
         winLoseUI = GameObject.Find("WinLose");
         inGame = GameObject.FindWithTag("InGame");
@@ -17,7 +23,9 @@ public class Stronghold : MonoBehaviour
 
     void Update()
     {
-       if (health <= 0) DestroyState(); 
+        if (tag == "PlayerStronghold")
+            healthSlider.value = health/baseHealth;
+        if (health <= 0) DestroyState(); 
     
     }
 

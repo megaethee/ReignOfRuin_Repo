@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Peasant_Brolic
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: f2d10c756389dab46ad1914eed708a53, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 7585fa897a12e134c8969500e81b7c95, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
