@@ -119,6 +119,11 @@ public class Troop : MonoBehaviour, UnitInterface
 
     public IEnumerator MoveOnGrid()
     {  
+        if (transform.parent.tag == "PlayerTroop")
+            Instantiate(Resources.Load<GameObject>("Player"), transform.parent.parent.position + new Vector3(0, 10, 0), Resources.Load<GameObject>("Interaction_Indicator").transform.rotation, transform.parent.parent.GetChild(1));
+        else if (transform.parent.tag == "OpponentTroop")
+            Instantiate(Resources.Load<GameObject>("Opponent"), transform.parent.parent.position + new Vector3(0, 10, 0), Resources.Load<GameObject>("Opponent").transform.rotation, transform.parent.parent.GetChild(1));
+
         anim.SetBool("isMoving", true);
         anim.SetBool("isAttacking", false);
         //probably gonna need to add lerping to this
