@@ -3098,7 +3098,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5094781362733124248, guid: 93e38fff73476f84aae0e42e6dd4d664, type: 3}
       propertyPath: mgDataBase.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5094781362733124248, guid: 93e38fff73476f84aae0e42e6dd4d664, type: 3}
       propertyPath: miniGames.Array.data[0].lvl
@@ -3134,6 +3134,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5094781362733124248, guid: 93e38fff73476f84aae0e42e6dd4d664, type: 3}
       propertyPath: mgDataBase.Array.data[3].name
+      value: Drunkard
+      objectReference: {fileID: 0}
+    - target: {fileID: 5094781362733124248, guid: 93e38fff73476f84aae0e42e6dd4d664, type: 3}
+      propertyPath: mgDataBase.Array.data[4].name
       value: Wizard
       objectReference: {fileID: 0}
     - target: {fileID: 5094781362733124248, guid: 93e38fff73476f84aae0e42e6dd4d664, type: 3}
@@ -3166,6 +3170,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5094781362733124248, guid: 93e38fff73476f84aae0e42e6dd4d664, type: 3}
       propertyPath: mgDataBase.Array.data[2].miniGames.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5094781362733124248, guid: 93e38fff73476f84aae0e42e6dd4d664, type: 3}
+      propertyPath: mgDataBase.Array.data[3].miniGames.Array.size
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5094781362733124248, guid: 93e38fff73476f84aae0e42e6dd4d664, type: 3}
@@ -3205,6 +3213,18 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5094781362733124248, guid: 93e38fff73476f84aae0e42e6dd4d664, type: 3}
+      propertyPath: mgDataBase.Array.data[3].miniGames.Array.data[0].lvl
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5094781362733124248, guid: 93e38fff73476f84aae0e42e6dd4d664, type: 3}
+      propertyPath: mgDataBase.Array.data[3].miniGames.Array.data[1].lvl
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5094781362733124248, guid: 93e38fff73476f84aae0e42e6dd4d664, type: 3}
+      propertyPath: mgDataBase.Array.data[3].miniGames.Array.data[2].lvl
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5094781362733124248, guid: 93e38fff73476f84aae0e42e6dd4d664, type: 3}
       propertyPath: mgDataBase.Array.data[0].miniGames.Array.data[0].mgObj
       value: 
       objectReference: {fileID: 7847657940092256571, guid: bfe891702a148f44d9b3216a9d8f97d1, type: 3}
@@ -3240,6 +3260,18 @@ PrefabInstance:
       propertyPath: mgDataBase.Array.data[2].miniGames.Array.data[2].mgObj
       value: 
       objectReference: {fileID: 1999506474819776649, guid: 701b942560cc36e4aa5e6377b21d9a69, type: 3}
+    - target: {fileID: 5094781362733124248, guid: 93e38fff73476f84aae0e42e6dd4d664, type: 3}
+      propertyPath: mgDataBase.Array.data[3].miniGames.Array.data[0].mgObj
+      value: 
+      objectReference: {fileID: 7847657940092256571, guid: 491486846c00c84498d012ca52ff74af, type: 3}
+    - target: {fileID: 5094781362733124248, guid: 93e38fff73476f84aae0e42e6dd4d664, type: 3}
+      propertyPath: mgDataBase.Array.data[3].miniGames.Array.data[1].mgObj
+      value: 
+      objectReference: {fileID: 7847657940092256571, guid: 491486846c00c84498d012ca52ff74af, type: 3}
+    - target: {fileID: 5094781362733124248, guid: 93e38fff73476f84aae0e42e6dd4d664, type: 3}
+      propertyPath: mgDataBase.Array.data[3].miniGames.Array.data[2].mgObj
+      value: 
+      objectReference: {fileID: 7847657940092256571, guid: 491486846c00c84498d012ca52ff74af, type: 3}
     - target: {fileID: 5241475698577721454, guid: 93e38fff73476f84aae0e42e6dd4d664, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -3641,6 +3673,10 @@ PrefabInstance:
     - target: {fileID: 1296148944496433100, guid: 3b7fccb4c764d344ca95f1121a51892d, type: 3}
       propertyPath: m_Name
       value: Peasant_Drunkardblend_sH
+      objectReference: {fileID: 0}
+    - target: {fileID: 2347785058805196501, guid: 3b7fccb4c764d344ca95f1121a51892d, type: 3}
+      propertyPath: unitType
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5369178363669924979, guid: 3b7fccb4c764d344ca95f1121a51892d, type: 3}
       propertyPath: m_LocalPosition.x

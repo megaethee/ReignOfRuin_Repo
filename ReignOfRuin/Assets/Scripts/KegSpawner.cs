@@ -13,6 +13,7 @@ public class KegSpawner : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {   
+        minigameBounds = GetComponent<BoxCollider>().bounds;
         Instantiate(kegPrefab, minigameBounds.center + new Vector3(Random.Range(-minigameBounds.extents.x, minigameBounds.extents.x), 0.75f, Random.Range(-minigameBounds.extents.z, minigameBounds.extents.z)), Quaternion.identity);
         
         if (GameObject.FindWithTag("Station") != null) {

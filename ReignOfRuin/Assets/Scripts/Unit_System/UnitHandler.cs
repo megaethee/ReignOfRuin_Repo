@@ -10,6 +10,7 @@ public class UnitHandler : MonoBehaviour
       Peasant,
       Archer,
       Blacksmith,
+      Drunkard,
       Wizard 
    } public UnitType unitType;
 
