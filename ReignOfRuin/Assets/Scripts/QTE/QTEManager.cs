@@ -22,7 +22,7 @@ public class QTEManager : MonoBehaviour
     public int maxAttempts = 5;                         // How many prompts total
 
     // References
-    public GameObject player, anvilTrigger;                           // Reference to player GameObject
+    public GameObject player, anvilTrigger;             // Reference to player GameObject
     public PlayerController playerMovementScript;       // Player movement script to disable during minigame
     public UnitHandler sH;
 
@@ -39,7 +39,7 @@ public class QTEManager : MonoBehaviour
     void Awake()
     {
         // Make sure none of the prompt text and score text UI is visible on game start
-        //cueText.gameObject.transform.parent.gameObject.SetActive(false);
+        // cueText.gameObject.transform.parent.gameObject.SetActive(false);
         cueText.text = "";
         scoreText.text = "";
 
@@ -71,6 +71,8 @@ public class QTEManager : MonoBehaviour
     // Starts the QTE minigame. It should be called by the trigger or interactable.
     public void StartMinigame()
     {
+        cueText.text = "";
+
         // Prevent re-triggering if game already running
         if (gameActive) return;
 
@@ -138,20 +140,20 @@ public class QTEManager : MonoBehaviour
         // Reminder: && is AND
         // if both are true, return true. If one is false, return false
         if (missAudio != null && !missAudio.isPlaying)
-            missAudio.Play(); 
+            missAudio.Play();
 
         currentAttempts++;
         canHit = false;
 
-        if (currentAttempts >= maxAttempts)
-            StartCoroutine(DelayedEndMinigame());
-        else
-            StartCoroutine(WaitBeforeNextCue());
+        StartCoroutine(FailAndEnd());
+        return;
+
     }
 
     // Displays cue and enables hit detection
     void ShowCue()
     {
+        cueText.color = Color.white;
         cueText.text = "Hit the Anvil! (Spacebar)";
         timer = 0f;
         canHit = true;
@@ -160,7 +162,6 @@ public class QTEManager : MonoBehaviour
     // Waits randomly before showing next cue
     IEnumerator WaitAndShowCue()
     {
-        cueText.text = ""; // Clear cue
         yield return new WaitForSeconds(Random.Range(cueDelayRange.x, cueDelayRange.y));
         ShowCue();
     }
@@ -168,7 +169,7 @@ public class QTEManager : MonoBehaviour
     // Waits briefly before showing next cue, to give time for "Nice!" or "Miss!" to show
     IEnumerator WaitBeforeNextCue()
     {
-        yield return new WaitForSeconds(1.0f); // Wait 1 second to show feedback
+        yield return new WaitForSeconds(1f); // Wait 1 second to show feedback
         StartCoroutine(WaitAndShowCue());      // Then prepare next cue
     }
 
@@ -179,9 +180,20 @@ public class QTEManager : MonoBehaviour
         EndMinigame();
     }
 
+    IEnumerator FailAndEnd()
+    {
+        yield return new WaitForSeconds(1f);    // Brief pause to show "Miss!"
+
+        EndMinigame();                          // End current session
+  
+    }
+
     // Ends the minigame, restores player control and ambience, triggers event
     void EndMinigame()
     {
+        cueText.text = "";
+        cueText.color = Color.white;
+
         // Note to self: how $"..." {}/{} works
         // $"..." lets C# know that 
         // "This is a string with embedded variables — replace the stuff in {} with actual values."
@@ -208,9 +220,12 @@ public class QTEManager : MonoBehaviour
 
         onMinigameCompleted?.Invoke(score); // Notify listeners
 
-        sH.StateProceed();
+        if (score < maxAttempts)
+            sH.StateReset();
+        else
+            sH.StateProceed();
 
-        cueText.gameObject.transform.parent.gameObject.SetActive(false);
+        //cueText.gameObject.transform.parent.gameObject.SetActive(false);
 
         Destroy(anvilTrigger);
     }
@@ -218,8 +233,9 @@ public class QTEManager : MonoBehaviour
     // Clears cue text after a short delay
     IEnumerator ClearCueTextAfterDelay(float delay = 2f)
     {
-        yield return new WaitForSeconds(delay);
         cueText.text = "";
+        yield return new WaitForSeconds(delay);
+
         scoreText.text = "";
     }
 
@@ -227,7 +243,7 @@ public class QTEManager : MonoBehaviour
     void UpdateScoreUI()
     {
         if (scoreText != null)
-            scoreText.text = $"Score: {score}";
+            scoreText.text = $"Score: {score}/{maxAttempts}";
     }
 
     // Enables or disables player movement

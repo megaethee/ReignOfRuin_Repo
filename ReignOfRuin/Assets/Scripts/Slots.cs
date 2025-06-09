@@ -17,7 +17,7 @@ public class Slots : MonoBehaviour
     {
         if (!startSpin)//Prevents Interference If The Reels Are Still Spinning
         {
-            if (Input.GetKeyDown(KeyCode.K))//The Input That Starts The Slot Machine 
+            if (Input.GetKeyDown(KeyCode.Space))//The Input That Starts The Slot Machine 
             {
                 startSpin = true;
                 StartCoroutine(Spinning());

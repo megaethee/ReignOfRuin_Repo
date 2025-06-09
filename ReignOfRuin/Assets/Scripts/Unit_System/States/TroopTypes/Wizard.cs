@@ -12,6 +12,11 @@ public class Wizard : MonoBehaviour
     private int nullCount=0, nonNullCount=0;
     [SerializeField]
     private bool firstTime=false, frame=false;
+
+    private void Awake()
+    {
+        transform.parent.tag = "PlayerTroop";
+    }
  
     private void OnTriggerEnter(Collider other)
     {

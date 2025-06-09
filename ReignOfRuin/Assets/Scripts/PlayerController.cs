@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
@@ -6,7 +8,14 @@ public class PlayerController : MonoBehaviour
     public static PlayerController _Instance { get; private set;}
     public float speed;
     private Vector2 move;
+    private bool isPaused = false;
     public int CoinCounter = 0;
+    public GameObject Arrow;
+    public Vector3 movement;
+    public bool canMove, stopper;
+    [SerializeField]
+    private UIManager uiManager;
+
 
     [SerializeField]
     private Rigidbody rB;
@@ -15,35 +24,81 @@ public class PlayerController : MonoBehaviour
     {
         move = context.ReadValue<Vector2>();
     }
+    public void OnPause(InputAction.CallbackContext context)
+    {
+        if (context.performed) // Only trigger on button press, not hold/release
+        {
+            isPaused = !isPaused; // Toggle pause state
+
+            if (isPaused)
+            {
+                Debug.Log("Game Paused");
+                uiManager.HandleUISwitch("PauseMenu");
+            }
+            else
+            {
+                Debug.Log("Game Resumed");
+                uiManager.HandleUISwitch("GameUI");
+            }
+        }
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+        void Start()
     {
         
     }
     private void Awake(){
-        if(null == _Instance){
+        if (uiManager == null)
+        {
+            uiManager = FindObjectOfType<UIManager>();
+        }
+
+        if (null == _Instance)
+        {
             _Instance = this;
         }
-        else {
+        else
+        {
             Destroy(gameObject);
         }
 
+        canMove = true;
+        stopper = false;
         rB = GetComponent<Rigidbody>();
     }
     // Update is called once per frame
     void Update()
     {
-        movePlayer();
+        if (canMove)
+            movePlayer();
+        else if (!canMove && stopper) {
+            StartCoroutine(MoveBack()); 
+            stopper = false;
+        }           
+    }
+
+    private IEnumerator MoveBack()
+    {
+        transform.Translate(-movement * speed * Time.deltaTime, Space.World);
+        yield return new WaitForSeconds(0.5f);
+        canMove = true;
     }
 
     public void movePlayer()
     {
-        Vector3 movement = new Vector3(move.x, 0f, move.y);
+        movement = new Vector3(move.x, 0f, move.y);
 
-        if (movement != Vector3.zero)
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement), 0.15f);
+        if (movement == Vector3.zero)
+            GetComponent<Animator>().SetBool("isMoving", false);
+        else
+            GetComponent<Animator>().SetBool("isMoving", true);
+
+        if (movement != Vector3.zero) {
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement), 0.15f); 
+        }
 
         transform.Translate(movement * speed * Time.deltaTime, Space.World);
+        
         //rB.MovePosition(transform.position + movement * Time.deltaTime * speed);
     }
 
@@ -53,6 +108,13 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(other.gameObject);
             CoinCounter++;
+        }
+
+        if (other.tag == "Building")
+        {
+            Debug.Log("STOOOOP");
+            stopper = true;
+            canMove = false; 
         }
         
     }

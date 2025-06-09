@@ -17,7 +17,8 @@ public class DialogueHandler : MonoBehaviour
     public float delay = 0.1f;
     public GameObject canvas;  
 
-    public bool stopWriting;
+    public bool stopWriting, isTyping=false;
+    private Coroutine typingCoroutine;
 
     private void Awake()
     {
@@ -44,21 +45,30 @@ public class DialogueHandler : MonoBehaviour
 
     public void SpeechProceed()
     {
+        if (isTyping)
+        {
+            stopWriting = true;
+            return;
+        }
+        
         testDialogue.inx++;
         
-        if (testDialogue.inx >= testDialogue.dialogueSequence.Capacity) {
+        if (testDialogue.inx >= testDialogue.dialogueSequence.Count) {
             pB.CompleteProceedButton(); 
             return;
         }
-        else  
-            if (testDialogue.dialogueSequence[testDialogue.inx] == null) {
-                pB.CompleteProceedButton();
-                return; 
-            }
-            else {
-                stopWriting = true;
-                StartCoroutine(TypeWriter(testDialogue.dialogueSequence[testDialogue.inx], testDialogue)); 
-            }
+          
+        if (testDialogue.dialogueSequence[testDialogue.inx] == null) {
+            pB.CompleteProceedButton();
+            return; 
+        }
+        
+        if (typingCoroutine != null) 
+            StopCoroutine(typingCoroutine);
+            //stopWriting = true;
+        
+        typingCoroutine = StartCoroutine(TypeWriter(testDialogue.dialogueSequence[testDialogue.inx], testDialogue)); 
+        
     }
 
     // Update is called once per frame
@@ -71,12 +81,24 @@ public class DialogueHandler : MonoBehaviour
 //put an interrupt here so its not janky
     public IEnumerator TypeWriter(string dialogue, Dialogue testDialogue) {
         stopWriting = false;
-        int curInx = testDialogue.inx; 
+        isTyping = true;
+        int curInx = testDialogue.inx;
+        string fullText = testDialogue.dialogueSequence[curInx];
+        txtToScreen.text = "";
+        
         for (int i=0; i<testDialogue.dialogueSequence[curInx].Length+1; i++) {
+            if (stopWriting)
+            {
+                txtToScreen.text = fullText;
+                break;
+            }
             txtToScreen.text = testDialogue.dialogueSequence[curInx].Substring(0, i);
-
+            
             if (stopWriting) yield break;
             yield return new WaitForSeconds(delay);
         }
+
+        stopWriting = false;
+        isTyping = false;
     }
 }

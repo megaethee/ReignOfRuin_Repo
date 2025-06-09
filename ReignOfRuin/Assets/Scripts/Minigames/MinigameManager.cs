@@ -43,18 +43,24 @@ public class MinigameManager : MonoBehaviour
         {
             case UnitHandler.UnitType.Peasant:
                 Debug.Log("I am peasant");
-                StartMiniGame(mgDataBase[0].miniGames[gameLvl]);
+                StartMiniGame(mgDataBase[0].miniGames[gameLvl-1]);
                 break;
             case UnitHandler.UnitType.Archer:
                 Debug.Log("I am archer");
+                sH.StateProceed();
                 //StartMiniGame(mgDataBase[1].miniGames[gameLvl]);
                 break;
             case UnitHandler.UnitType.Blacksmith:
                 Debug.Log("I am blacksmith");
-                StartMiniGame(mgDataBase[2].miniGames[gameLvl]);
+                StartMiniGame(mgDataBase[2].miniGames[gameLvl-1]);
+                break;
+            case UnitHandler.UnitType.Drunkard:
+                StartMiniGameCenter(mgDataBase[3].miniGames[gameLvl-1]);
                 break;
             case UnitHandler.UnitType.Wizard:
                 Debug.Log("I am a wizard");
+                sH.StateProceed();
+                //StartMiniGame(mgDataBase[4].miniGames[gameLvl-1]);
                 break;
         } 
         
@@ -65,6 +71,15 @@ public class MinigameManager : MonoBehaviour
     private void StartMiniGame(MiniGame mG)
     {
         //instantiate minigame object here
-        GameObject miniGamePref = Instantiate(mG.mgObj, curPosition, mG.mgObj.transform.rotation);  
+        Vector3 offset = new Vector3(0, 0, 0);
+        if (curPosition.x < 4)
+            offset = new Vector3(2f, 0, 0);
+
+        GameObject miniGamePref = Instantiate(mG.mgObj, curPosition + offset, mG.mgObj.transform.rotation);  
     } 
+
+    private void StartMiniGameCenter(MiniGame mG)
+    {
+        GameObject miniGamePref = Instantiate(mG.mgObj, new Vector3(0, 0, -12), mG.mgObj.transform.rotation);
+    }
 }

@@ -16,7 +16,8 @@ public class TroopStats : ScriptableObject
    public enum Path {
       Straight,
       L,
-      Across
+      Across,
+      Drunk
    } public Path path;
 
    public Vector2Int TargCordCompiler()
@@ -35,7 +36,13 @@ public class TroopStats : ScriptableObject
             targCord = new Vector2Int(GridManager._Instance.gridSize.x-1, GridManager._Instance.gridSize.y-1);      
          else if (xPosition > Mathf.RoundToInt((GridManager._Instance.gridSize.x-1)/2))
             targCord = new Vector2Int(0, GridManager._Instance.gridSize.y-1); 
-      } 
+      }
+      else if (path == Path.Drunk) {
+         if (xPosition <= Mathf.RoundToInt((GridManager._Instance.gridSize.x-1)/2))
+            targCord = new Vector2Int(GridManager._Instance.gridSize.x-1, (GridManager._Instance.gridSize.y-1)/2);      
+         else if (xPosition > Mathf.RoundToInt((GridManager._Instance.gridSize.x-1)/2))
+            targCord = new Vector2Int(0, (GridManager._Instance.gridSize.y-1)/2); 
+      }
       
       return targCord;
    } 

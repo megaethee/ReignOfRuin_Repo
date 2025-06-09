@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4772264073837253492}
   - component: {fileID: 4312764241643193346}
+  - component: {fileID: 8033475919040267683}
   m_Layer: 0
   m_Name: Keg Minigame
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 7847657940092256571}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.380742, y: 6.0988097, z: -0.96604323}
+  m_LocalPosition: {x: 15.08, y: 6.0988097, z: -0.96604323}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -44,9 +45,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69c00cb2a159249498a34e4534446346, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kegPrefab: {fileID: 990845373040312642, guid: fcf788b6c9688074ebb2d4e2ecd2ee01, type: 3}
-  minX: 0
-  maxX: 0
-  minZ: 0
-  maxZ: 0
+  kegPrefab: {fileID: 70860705044912957, guid: 29c541f73c062bb48b6290a07c54e2c6, type: 3}
+  minigameBounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
   stationHandler: {fileID: 0}
+--- !u!65 &8033475919040267683
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7847657940092256571}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 6, y: 1, z: 16}
+  m_Center: {x: 0, y: 0, z: 0}

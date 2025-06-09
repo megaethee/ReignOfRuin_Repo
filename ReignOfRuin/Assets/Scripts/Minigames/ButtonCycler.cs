@@ -18,16 +18,23 @@ public class ButtonCycler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       if (Input.GetKeyDown(KeyCode.E)) {
-            cIndex++; 
-            if (cIndex > maxButtons-1)
-                cIndex=1;
-       }
-       if (Input.GetKeyDown(KeyCode.Q)) {
-            cIndex--;
-            if (cIndex < 1)
-                cIndex=maxButtons-1;
-       }
+       //if (Input.GetKeyDown(KeyCode.E)) {
+       //     cIndex++; 
+       //     if (cIndex > maxButtons-1)
+       //         cIndex=1;
+       //}
+       //if (Input.GetKeyDown(KeyCode.Q)) {
+       //     cIndex--;
+       //     if (cIndex < 1)
+       //         cIndex=maxButtons-1;
+       //}
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+            cIndex = 1;
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+            cIndex = 2;
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+            cIndex = 3;
+    
         selectRing.position = transform.GetChild(cIndex).position;
 
        if (Input.GetKeyDown(KeyCode.Space)) {
