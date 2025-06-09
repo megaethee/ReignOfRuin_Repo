@@ -10,6 +10,7 @@ public class UnitHandler : MonoBehaviour
       Peasant,
       Archer,
       Blacksmith,
+      Drunkard,
       Wizard 
    } public UnitType unitType;
 
@@ -20,11 +21,14 @@ public class UnitHandler : MonoBehaviour
 
    public CameraZoomManager cameraZoomManager;
 
+   public Animator animator;
+
    [SerializeField] 
    private int instantCounter = 0;
 
    private void Awake()
    {
+      animator = transform.parent.GetComponent<Animator>();
       cameraZoomManager = GameObject.Find("Cameras").GetComponent<CameraZoomManager>();
       maxStates = transform.childCount;
       gameObject.tag = "Untagged";
@@ -44,7 +48,7 @@ public class UnitHandler : MonoBehaviour
    {
       if (imEngaged && instantCounter < 1)
       {
-         interactObj = Instantiate(Resources.Load<GameObject>("Interaction_Indicator"), transform.position + new Vector3(0, 1.25f, 0), Resources.Load<GameObject>("Interaction_Indicator").transform.rotation);
+         interactObj = Instantiate(Resources.Load<GameObject>("Interaction_Indicator"), transform.parent.position + new Vector3(0, 2.75f, 0), Resources.Load<GameObject>("Interaction_Indicator").transform.rotation);
          instantCounter++;
       }
       else if (!imEngaged && instantCounter >= 1)
@@ -71,6 +75,7 @@ public class UnitHandler : MonoBehaviour
    public void StateReset()
    { 
       minigameStarted = false;
+      imEngaged = false;
       transform.GetChild(state-1).gameObject.SetActive(false);
       transform.GetChild(0).gameObject.SetActive(true);
       if (gameObject.tag == "Station") transform.GetChild(0).gameObject.GetComponent<CharacterStation>().Again();

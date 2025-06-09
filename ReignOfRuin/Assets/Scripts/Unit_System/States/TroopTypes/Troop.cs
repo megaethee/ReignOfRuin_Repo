@@ -13,6 +13,8 @@ public class Troop : MonoBehaviour, UnitInterface
     public Vector2Int finalTargCord, oppCords;
     public Vector3 targPos;
     public bool opponentFound; 
+    public UnitHandler unitHandler;
+    public Animator anim;
 
     private void Awake()
     { 
@@ -23,12 +25,13 @@ public class Troop : MonoBehaviour, UnitInterface
     public void Again()
     { 
         if (transform.parent.tag == "PlayerTroop") {
+            unitHandler = transform.parent.gameObject.GetComponent<UnitHandler>();
             if (spawnRef != null)
                 spawnRef.toRestart++;
             StartCoroutine(PlayerStates._Instance.Blink());
 
         
-            switch (transform.parent.gameObject.GetComponent<UnitHandler>().statMultiplier) {    
+            switch (unitHandler.statMultiplier) {    
                 case 1: 
                     health = troopStats.health;
                     dmg = troopStats.dmg; 
@@ -76,30 +79,38 @@ public class Troop : MonoBehaviour, UnitInterface
 
     private IEnumerator MoveToGrid()
     {
+        if (transform.parent.tag == "PlayerTroop")
+            anim = unitHandler.animator;
+        else if (transform.parent.tag == "OpponentTroop")
+            anim = transform.parent.parent.GetComponent<Animator>();
+
+        anim.SetBool("isMoving", true);
+
         float elapsedTime=0, hangTime=2f;
-        Vector3 curPos=transform.parent.position, curRot=transform.parent.eulerAngles;
+        Vector3 curPos=transform.parent.parent.position;
         //Vector3 targPos;
         if (transform.parent.tag == "PlayerTroop")
-            targPos=new Vector3(tC.teleCords.x, transform.parent.position.y, tC.teleCords.y);
+            targPos=new Vector3(tC.teleCords.x, transform.parent.parent.position.y, tC.teleCords.y);
         else if (transform.parent.tag == "OpponentTroop")
-            targPos=new Vector3(oppCords.x, transform.parent.position.y, oppCords.y);
+            targPos=new Vector3(oppCords.x, transform.parent.parent.position.y, oppCords.y);
+
+        transform.parent.parent.rotation = Quaternion.LookRotation(targPos - curPos);
 
         while (elapsedTime < hangTime) {
-            transform.parent.position = Vector3.Lerp(curPos, targPos, (elapsedTime/hangTime));
-
-            if (transform.parent.tag == "PlayerTroop") 
-                transform.parent.eulerAngles = Vector3.Lerp(curRot, Vector3.forward, (elapsedTime/hangTime));
+            transform.parent.parent.position = Vector3.Lerp(curPos, targPos, (elapsedTime/hangTime));
             
             elapsedTime += Time.deltaTime;
             yield return null;
         }
 
-        transform.parent.position = targPos;
+        transform.parent.parent.position = targPos;
         if (transform.parent.tag == "PlayerTroop")
-            transform.parent.eulerAngles = Vector3.forward;
+            transform.parent.parent.eulerAngles = Vector3.forward;
+        else if (transform.parent.tag == "OpponentTroop")
+            transform.parent.parent.eulerAngles = new Vector3(0, 180, 0);
         //this always needs to go before so it will get the path of movement right every time
-        troopStats.xPosition = Mathf.RoundToInt(transform.parent.position.x);
-        troopStats.yPosition = Mathf.RoundToInt(transform.parent.position.z); 
+        troopStats.xPosition = Mathf.RoundToInt(transform.parent.parent.position.x);
+        troopStats.yPosition = Mathf.RoundToInt(transform.parent.parent.position.z); 
 //setting this variable resolves the recompiling bug
         finalTargCord = troopStats.TargCordCompiler();
 
@@ -108,57 +119,76 @@ public class Troop : MonoBehaviour, UnitInterface
 
     public IEnumerator MoveOnGrid()
     {  
+        if (transform.parent.tag == "PlayerTroop")
+            Instantiate(Resources.Load<GameObject>("Player"), transform.parent.parent.position + new Vector3(0, 10, 0), Resources.Load<GameObject>("Interaction_Indicator").transform.rotation, transform.parent.parent.GetChild(1));
+        else if (transform.parent.tag == "OpponentTroop")
+            Instantiate(Resources.Load<GameObject>("Opponent"), transform.parent.parent.position + new Vector3(0, 10, 0), Resources.Load<GameObject>("Opponent").transform.rotation, transform.parent.parent.GetChild(1));
+
+        anim.SetBool("isMoving", true);
+        anim.SetBool("isAttacking", false);
         //probably gonna need to add lerping to this
-        if (transform.parent.position.x < GridManager._Instance.grid[finalTargCord].cords.x) {
-            for (; transform.parent.position.x < GridManager._Instance.grid[finalTargCord].cords.x; 
-                transform.parent.position = new Vector3(transform.parent.position.x+1, transform.parent.position.y, transform.parent.position.z)) {
+        if (transform.parent.parent.position.x < GridManager._Instance.grid[finalTargCord].cords.x) {
+            for (; transform.parent.parent.position.x < GridManager._Instance.grid[finalTargCord].cords.x; 
+                transform.parent.parent.position = new Vector3(transform.parent.parent.position.x+1, transform.parent.parent.position.y, transform.parent.parent.position.z)) {
                 
-                if (transform.parent.position.x  == 0) continue;
+                if (transform.parent.parent.position.x  == 0) continue;
                 
                 yield return new WaitForSeconds(troopStats.speed);
 
                 if (opponentFound == true) { 
+                    anim.SetBool("isMoving", false);
+                    anim.SetBool("isAttacking", true); 
                     Debug.Log("I can't move");
                     yield break;
                 }
             }
-        } else if (transform.parent.position.x > GridManager._Instance.grid[finalTargCord].cords.x) {
-            for (; transform.parent.position.x > GridManager._Instance.grid[finalTargCord].cords.x; 
-                transform.parent.position = new Vector3(transform.parent.position.x-1, transform.parent.position.y, transform.parent.position.z)) {
+        } else if (transform.parent.parent.position.x > GridManager._Instance.grid[finalTargCord].cords.x) {
+            for (; transform.parent.parent.position.x > GridManager._Instance.grid[finalTargCord].cords.x; 
+                transform.parent.parent.position = new Vector3(transform.parent.parent.position.x-1, transform.parent.parent.position.y, transform.parent.parent.position.z)) {
                 
-                if (transform.parent.position.x  == 0) continue;
+                if (transform.parent.parent.position.x  == 0) continue;
                 
                 yield return new WaitForSeconds(troopStats.speed);
 
                 if (opponentFound == true) {
+                    anim.SetBool("isMoving", false);
+                    anim.SetBool("isAttacking", true); 
                     Debug.Log("I can't move");
                     yield break;
                 }
             }
         }
+        
         if (transform.parent.tag == "PlayerTroop") { 
-            for (; transform.parent.position.z < GridManager._Instance.grid[finalTargCord].cords.y; 
-                transform.parent.position = new Vector3(transform.parent.position.x, transform.parent.position.y, transform.parent.position.z+1)) { 
+            for (; transform.parent.parent.position.z < GridManager._Instance.grid[finalTargCord].cords.y; 
+                transform.parent.parent.position = new Vector3(transform.parent.parent.position.x, transform.parent.parent.position.y, transform.parent.parent.position.z+1)) { 
                 
-                if (transform.parent.position.z == 0) continue;
+                if (transform.parent.parent.position.z == 0) continue;
 
                 yield return new WaitForSeconds(troopStats.speed);
     //this resolves the stopping too late issue
                 if (opponentFound == true) {
+                    anim.SetBool("isMoving", false);
+                    anim.SetBool("isAttacking", true); 
                     Debug.Log("I can't move");
                     yield break;
                 }
             }
         }
         else if (transform.parent.tag == "OpponentTroop") {
-            for (; transform.parent.position.z > 0; 
-                transform.parent.position = new Vector3(transform.parent.position.x, transform.parent.position.y, transform.parent.position.z-1)) { 
+            for (; transform.parent.parent.position.z > 0; 
+                transform.parent.parent.position = new Vector3(transform.parent.parent.position.x, transform.parent.parent.position.y, transform.parent.parent.position.z-1)) { 
                 
-                if (transform.parent.position.z == 0) continue;
+                if (transform.parent.parent.position.z == 0) continue;
 
                 yield return new WaitForSeconds(troopStats.speed);
     //this resolves the stopping too late issue
-                if (opponentFound == true) yield break;
+                if (opponentFound == true) {
+                    anim.SetBool("isMoving", false);
+                    anim.SetBool("isAttacking", true); 
+
+                    yield break;
+                }
             }
         }
 
@@ -171,7 +201,7 @@ public class Troop : MonoBehaviour, UnitInterface
     void Update()
     {
         if (health <= 0)
-            Destroy(transform.parent.gameObject);
+            Destroy(transform.parent.parent.gameObject);
          
     } 
 

@@ -54,10 +54,13 @@ public class MinigameManager : MonoBehaviour
                 Debug.Log("I am blacksmith");
                 StartMiniGame(mgDataBase[2].miniGames[gameLvl-1]);
                 break;
+            case UnitHandler.UnitType.Drunkard:
+                StartMiniGameCenter(mgDataBase[3].miniGames[gameLvl-1]);
+                break;
             case UnitHandler.UnitType.Wizard:
                 Debug.Log("I am a wizard");
                 sH.StateProceed();
-                //StartMiniGame(mgDataBase[3].miniGames[gameLvl-1]);
+                //StartMiniGame(mgDataBase[4].miniGames[gameLvl-1]);
                 break;
         } 
         
@@ -74,4 +77,9 @@ public class MinigameManager : MonoBehaviour
 
         GameObject miniGamePref = Instantiate(mG.mgObj, curPosition + offset, mG.mgObj.transform.rotation);  
     } 
+
+    private void StartMiniGameCenter(MiniGame mG)
+    {
+        GameObject miniGamePref = Instantiate(mG.mgObj, new Vector3(0, 0, -12), mG.mgObj.transform.rotation);
+    }
 }
