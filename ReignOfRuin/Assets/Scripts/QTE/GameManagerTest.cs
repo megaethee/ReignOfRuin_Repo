@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class GameManagerTest : MonoBehaviour
 {
-    // Reference to the RhythmGameManager in the scene
+    /// Reference to the RhythmGameManager in the scene
     public QTEManager rhythmMinigame;
 
     void Start()
