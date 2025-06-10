@@ -157,8 +157,8 @@ public class Troop : MonoBehaviour, UnitInterface
                     yield break;
                 }
             }
-        }
-        
+        } 
+
         if (transform.parent.tag == "PlayerTroop") { 
             for (; transform.parent.parent.position.z < GridManager._Instance.grid[finalTargCord].cords.y; 
                 transform.parent.parent.position = new Vector3(transform.parent.parent.position.x, transform.parent.parent.position.y, transform.parent.parent.position.z+1)) { 
@@ -176,7 +176,9 @@ public class Troop : MonoBehaviour, UnitInterface
             }
         }
         else if (transform.parent.tag == "OpponentTroop") {
-            for (; transform.parent.parent.position.z > 0; 
+            int zCord = 0;
+            if (troopStats.path == TroopStats.Path.Drunk) zCord = GridManager._Instance.grid[finalTargCord].cords.y; 
+            for (; transform.parent.parent.position.z > zCord; 
                 transform.parent.parent.position = new Vector3(transform.parent.parent.position.x, transform.parent.parent.position.y, transform.parent.parent.position.z-1)) { 
                 
                 if (transform.parent.parent.position.z == 0) continue;
@@ -195,6 +197,7 @@ public class Troop : MonoBehaviour, UnitInterface
         if (troopStats.path == TroopStats.Path.Drunk) {
             //Debug.Log("Do something");
             GetComponent<Drunkard>().Recalc();
+            yield break;
         }
     }
 

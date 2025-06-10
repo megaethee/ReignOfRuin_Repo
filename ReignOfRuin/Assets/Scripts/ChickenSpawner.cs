@@ -6,6 +6,7 @@ public class ChickenSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject chickenPrefab;
     [SerializeField] private Bounds minigameBounds;
+    public int spawnAmt;
     //[SerializeField] private float minX;
     //[SerializeField] private float maxX;
     //[SerializeField] private float minZ;
@@ -17,8 +18,8 @@ public class ChickenSpawner : MonoBehaviour
     {   
         minigameBounds = GetComponent<BoxCollider>().bounds;
 
-        for (int i = 0; i < 6; i++){
-            Instantiate(chickenPrefab, minigameBounds.center + new Vector3(Random.Range(-minigameBounds.extents.x, minigameBounds.extents.x), 0.75f, Random.Range(-minigameBounds.extents.z, minigameBounds.extents.z)), Quaternion.identity);
+        for (int i = 0; i < spawnAmt; i++){
+            Instantiate(chickenPrefab, minigameBounds.center + new Vector3(Random.Range(-minigameBounds.extents.x, minigameBounds.extents.x), 0, Random.Range(-minigameBounds.extents.z, minigameBounds.extents.z)), Quaternion.identity);
         }
         if (GameObject.FindWithTag("Station") != null)
         {
@@ -30,7 +31,7 @@ public class ChickenSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PlayerController._Instance.CoinCounter == 12){
+        if (PlayerController._Instance.CoinCounter == spawnAmt*2){
             stationHandler.StateProceed();
             Destroy(gameObject);
             PlayerController._Instance.CoinCounter = 0; 

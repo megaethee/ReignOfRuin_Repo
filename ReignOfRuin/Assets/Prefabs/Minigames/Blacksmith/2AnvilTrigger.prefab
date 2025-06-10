@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 7707395330207232856}
   - component: {fileID: 4198977703660235885}
   m_Layer: 0
-  m_Name: AnvilTrigger
-  m_TagString: Untagged
+  m_Name: 2AnvilTrigger
+  m_TagString: AnvilTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,6 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   QTEGame: {fileID: 0}
   interactionPromptText: {fileID: 0}
+  maxAttemptsLevel: 4
 --- !u!65 &4198977703660235885
 BoxCollider:
   m_ObjectHideFlags: 0

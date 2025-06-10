@@ -1165,8 +1165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   units:
-  - {fileID: 4017929863199749973, guid: 78654c1c90e23144b88b39aa2ba79d81, type: 3}
-  - {fileID: 4077338402628435353, guid: b2edc9d031638f7409c68ddb1bca5813, type: 3}
+  - {fileID: 8389368463125347277, guid: 2cbc2ed35013e5342bc24333744ce8d1, type: 3}
   bounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
@@ -1793,6 +1792,14 @@ PrefabInstance:
     - target: {fileID: 5869088746085357545, guid: 5e9da7c56df7dc540b8670e596d9167e, type: 3}
       propertyPath: m_LocalPosition.z
       value: -10.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 6308818585019919864, guid: 5e9da7c56df7dc540b8670e596d9167e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 6308818585019919864, guid: 5e9da7c56df7dc540b8670e596d9167e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -10.67
       objectReference: {fileID: 0}
     - target: {fileID: 7387166991087330637, guid: 5e9da7c56df7dc540b8670e596d9167e, type: 3}
       propertyPath: m_LocalScale.x
@@ -3270,11 +3277,11 @@ PrefabInstance:
     - target: {fileID: 5094781362733124248, guid: 93e38fff73476f84aae0e42e6dd4d664, type: 3}
       propertyPath: mgDataBase.Array.data[0].miniGames.Array.data[1].mgObj
       value: 
-      objectReference: {fileID: 7847657940092256571, guid: bfe891702a148f44d9b3216a9d8f97d1, type: 3}
+      objectReference: {fileID: 7847657940092256571, guid: a7d1f9f4e0e01684196ada80d747c61b, type: 3}
     - target: {fileID: 5094781362733124248, guid: 93e38fff73476f84aae0e42e6dd4d664, type: 3}
       propertyPath: mgDataBase.Array.data[0].miniGames.Array.data[2].mgObj
       value: 
-      objectReference: {fileID: 7847657940092256571, guid: bfe891702a148f44d9b3216a9d8f97d1, type: 3}
+      objectReference: {fileID: 7847657940092256571, guid: ba168083fccc27a4d9d3d83fbb312e85, type: 3}
     - target: {fileID: 5094781362733124248, guid: 93e38fff73476f84aae0e42e6dd4d664, type: 3}
       propertyPath: mgDataBase.Array.data[1].miniGames.Array.data[0].mgObj
       value: 
@@ -3294,11 +3301,11 @@ PrefabInstance:
     - target: {fileID: 5094781362733124248, guid: 93e38fff73476f84aae0e42e6dd4d664, type: 3}
       propertyPath: mgDataBase.Array.data[2].miniGames.Array.data[1].mgObj
       value: 
-      objectReference: {fileID: 1999506474819776649, guid: 701b942560cc36e4aa5e6377b21d9a69, type: 3}
+      objectReference: {fileID: 1999506474819776649, guid: 409ddf299d6401e4590bd4687003cd60, type: 3}
     - target: {fileID: 5094781362733124248, guid: 93e38fff73476f84aae0e42e6dd4d664, type: 3}
       propertyPath: mgDataBase.Array.data[2].miniGames.Array.data[2].mgObj
       value: 
-      objectReference: {fileID: 1999506474819776649, guid: 701b942560cc36e4aa5e6377b21d9a69, type: 3}
+      objectReference: {fileID: 1999506474819776649, guid: e69296589c2955842be98e05d4f5e6dd, type: 3}
     - target: {fileID: 5094781362733124248, guid: 93e38fff73476f84aae0e42e6dd4d664, type: 3}
       propertyPath: mgDataBase.Array.data[3].miniGames.Array.data[0].mgObj
       value: 
@@ -3306,11 +3313,11 @@ PrefabInstance:
     - target: {fileID: 5094781362733124248, guid: 93e38fff73476f84aae0e42e6dd4d664, type: 3}
       propertyPath: mgDataBase.Array.data[3].miniGames.Array.data[1].mgObj
       value: 
-      objectReference: {fileID: 7847657940092256571, guid: 491486846c00c84498d012ca52ff74af, type: 3}
+      objectReference: {fileID: 7847657940092256571, guid: d92b27cebf8a75548844896a71db8d63, type: 3}
     - target: {fileID: 5094781362733124248, guid: 93e38fff73476f84aae0e42e6dd4d664, type: 3}
       propertyPath: mgDataBase.Array.data[3].miniGames.Array.data[2].mgObj
       value: 
-      objectReference: {fileID: 7847657940092256571, guid: 491486846c00c84498d012ca52ff74af, type: 3}
+      objectReference: {fileID: 7847657940092256571, guid: de3788ad9d37c6747886ad9f964a8a2d, type: 3}
     - target: {fileID: 5241475698577721454, guid: 93e38fff73476f84aae0e42e6dd4d664, type: 3}
       propertyPath: m_IsActive
       value: 1

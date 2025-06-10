@@ -16,6 +16,7 @@ TagManager:
   - InGame
   - Scarecrow
   - UIPanel
+  - AnvilTrigger
   layers:
   - Default
   - TransparentFX
