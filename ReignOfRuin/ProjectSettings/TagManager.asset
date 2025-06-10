@@ -15,6 +15,7 @@ TagManager:
   - OpponentTroop
   - InGame
   - Scarecrow
+  - UIPanel
   layers:
   - Default
   - TransparentFX
