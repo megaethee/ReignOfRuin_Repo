@@ -14,15 +14,28 @@ public class Drunkard : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "OpponentUnit" && troop.opponentFound == false) { 
-            troop.opponentFound = true;
-            enemy = other.gameObject;
-            StartCoroutine(DealDamage());
-        }
-        if (other.tag == "OpponentStronghold" && troop.opponentFound == false) {
-            troop.opponentFound = true;
-            enemy = other.gameObject;
-            StartCoroutine(DealDamageStronghold());
+        if (transform.parent.tag == "PlayerTroop") {
+            if (other.tag == "OpponentTroop" && troop.opponentFound == false) { 
+                troop.opponentFound = true;
+                enemy = other.gameObject;
+                StartCoroutine(DealDamage());
+            }
+            if (other.tag == "OpponentStronghold" && troop.opponentFound == false) {
+                troop.opponentFound = true;
+                enemy = other.gameObject;
+                StartCoroutine(DealDamageStronghold());
+            }
+        } else if (transform.parent.tag == "OpponentTroop") {
+            if (other.tag == "PlayerTroop" && troop.opponentFound == false) {
+                troop.opponentFound = true;
+                enemy = other.gameObject;
+                StartCoroutine(DealDamage());
+            }
+            if (other.tag == "PlayerStronghold" && troop.opponentFound == false) {
+                troop.opponentFound = true;
+                enemy = other.gameObject;
+                StartCoroutine(DealDamageStronghold());
+            }
         }
     }
 
@@ -44,7 +57,7 @@ public class Drunkard : MonoBehaviour
     {
         while (true) {
             if (enemy != null) {
-                enemy.GetComponentInChildren<TroopOpponent>().health -= troop.dmg;
+                enemy.GetComponentInChildren<Troop>().health -= troop.dmg;
 
                 yield return new WaitForSeconds(troop.troopStats.speed);
             } else {

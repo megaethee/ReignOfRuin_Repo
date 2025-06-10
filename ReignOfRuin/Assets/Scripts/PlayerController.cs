@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     public int CoinCounter = 0;
     public GameObject Arrow;
     public Vector3 movement;
-    public bool canMove, stopper;
+    public bool canMove;
     [SerializeField]
     private UIManager uiManager;
 
@@ -63,18 +63,14 @@ public class PlayerController : MonoBehaviour
         }
 
         canMove = true;
-        stopper = false;
+        
         rB = GetComponent<Rigidbody>();
     }
     // Update is called once per frame
     void Update()
     {
         if (canMove)
-            movePlayer();
-        else if (!canMove && stopper) {
-            StartCoroutine(MoveBack()); 
-            stopper = false;
-        }           
+            movePlayer();        
     }
 
     private IEnumerator MoveBack()
@@ -113,7 +109,7 @@ public class PlayerController : MonoBehaviour
         if (other.tag == "Building")
         {
             Debug.Log("STOOOOP");
-            stopper = true;
+            StartCoroutine(MoveBack()); 
             canMove = false; 
         }
         
