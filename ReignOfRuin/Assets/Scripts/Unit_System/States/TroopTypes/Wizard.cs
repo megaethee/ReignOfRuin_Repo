@@ -12,6 +12,7 @@ public class Wizard : MonoBehaviour
     private int nullCount=0, nonNullCount=0;
     [SerializeField]
     private bool firstTime=false, frame=false;
+    GameObject lightning;
 
     private void Awake()
     {
@@ -20,7 +21,7 @@ public class Wizard : MonoBehaviour
  
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "OpponentUnit") { 
+        if (other.tag == "OpponentTroop") { 
             firstTime = true;
             troop.opponentFound = true;
             enemies.Add(other.gameObject);
@@ -58,13 +59,15 @@ public class Wizard : MonoBehaviour
     }
 
     private IEnumerator DealDamage(GameObject en)
-    { //infinite loop
+    { //infinite loop 
         while (true) {
             if (en != null) {
-                en.GetComponentInChildren<TroopOpponent>().health -= troop.dmg;
+                lightning = Instantiate(Resources.Load<GameObject>("WizardLightning"), en.transform.position + new Vector3(0, 2.75f, 0), Resources.Load<GameObject>("WizardLightning").transform.rotation);
+                en.GetComponentInChildren<Troop>().health -= troop.dmg;
                 yield return new WaitForSeconds(troop.troopStats.speed);
+                Destroy(lightning);
             }  
-            else {
+            else { 
                 nullCount++; 
                 nonNullCount = enemies.Count - nullCount;
                 troop.opponentFound = false;  

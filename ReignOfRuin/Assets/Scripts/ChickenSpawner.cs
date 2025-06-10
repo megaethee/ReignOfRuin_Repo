@@ -30,7 +30,7 @@ public class ChickenSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PlayerController._Instance.CoinCounter == 6){
+        if (PlayerController._Instance.CoinCounter == 12){
             stationHandler.StateProceed();
             Destroy(gameObject);
             PlayerController._Instance.CoinCounter = 0; 

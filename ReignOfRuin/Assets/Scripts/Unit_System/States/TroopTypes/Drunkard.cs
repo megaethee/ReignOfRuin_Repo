@@ -44,7 +44,7 @@ public class Drunkard : MonoBehaviour
     {
         while (true) {
             if (enemy != null) {
-                enemy.GetComponentInChildren<TroopOpponent>().health -= troop.dmg;
+                enemy.GetComponentInChildren<Troop>().health -= troop.dmg;
 
                 yield return new WaitForSeconds(troop.troopStats.speed);
             } else {
