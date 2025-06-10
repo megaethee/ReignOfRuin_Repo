@@ -8,6 +8,7 @@ public class AnvilTrigger : MonoBehaviour
 {
     public QTEManager QTEGame;                          // Reference to the QTEManager 
     public TextMeshProUGUI interactionPromptText;       // Reference to the prompt text UI, basically the thing titled blacksmith interaction under canvas
+    public int maxAttemptsLevel;
 
     private bool playerNearby = false;                  // Tracks whether player is inside the anvil trigger zone
 

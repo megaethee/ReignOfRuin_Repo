@@ -82,7 +82,8 @@ public class QTEManager : MonoBehaviour
             sH.minigameStarted = true;
         }
     
-        anvilTrigger = GameObject.Find("AnvilTrigger(Clone)");
+        anvilTrigger = GameObject.FindWithTag("AnvilTrigger");
+        maxAttempts = anvilTrigger.GetComponent<AnvilTrigger>().maxAttemptsLevel;
         cueText.gameObject.transform.parent.gameObject.SetActive(true);
         gameActive = true;
         currentAttempts = 0;
