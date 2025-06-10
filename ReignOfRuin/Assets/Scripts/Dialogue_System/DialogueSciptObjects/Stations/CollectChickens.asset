@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3a09722db844d0f4c9b499746e164f2b, type: 3}
-  m_Name: CollectCoins
+  m_Name: CollectChickens
   m_EditorClassIdentifier: 
   dialogueSequence:
   - You there!
-  - Collect me some coins!
-  - Then we'll fight.
+  - My chickens got loose!
+  - Please bring them back!
   inx: 1
