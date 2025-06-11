@@ -8,10 +8,14 @@ public class PlayerController : MonoBehaviour
     public static PlayerController _Instance { get; private set;}
     public float speed;
     private Vector2 move;
+    private bool isPaused = false;
     public int CoinCounter = 0;
     public GameObject Arrow;
     public Vector3 movement;
-    public bool canMove, stopper;
+    public bool canMove;
+    [SerializeField]
+    private UIManager uiManager;
+
 
     [SerializeField]
     private Rigidbody rB;
@@ -20,32 +24,53 @@ public class PlayerController : MonoBehaviour
     {
         move = context.ReadValue<Vector2>();
     }
+    public void OnPause(InputAction.CallbackContext context)
+    {
+        if (context.performed) // Only trigger on button press, not hold/release
+        {
+            isPaused = !isPaused; // Toggle pause state
+
+            if (isPaused)
+            {
+                Debug.Log("Game Paused");
+                uiManager.HandleUISwitch("PauseMenu");
+            }
+            else
+            {
+                Debug.Log("Game Resumed");
+                uiManager.HandleUISwitch("GameUI");
+            }
+        }
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+        void Start()
     {
         
     }
     private void Awake(){
-        if(null == _Instance){
+        if (uiManager == null)
+        {
+            uiManager = FindObjectOfType<UIManager>();
+        }
+
+        if (null == _Instance)
+        {
             _Instance = this;
         }
-        else {
+        else
+        {
             Destroy(gameObject);
         }
 
         canMove = true;
-        stopper = false;
+        
         rB = GetComponent<Rigidbody>();
     }
     // Update is called once per frame
     void Update()
     {
         if (canMove)
-            movePlayer();
-        else if (!canMove && stopper) {
-            StartCoroutine(MoveBack()); 
-            stopper = false;
-        }           
+            movePlayer();        
     }
 
     private IEnumerator MoveBack()
@@ -84,7 +109,7 @@ public class PlayerController : MonoBehaviour
         if (other.tag == "Building")
         {
             Debug.Log("STOOOOP");
-            stopper = true;
+            StartCoroutine(MoveBack()); 
             canMove = false; 
         }
         

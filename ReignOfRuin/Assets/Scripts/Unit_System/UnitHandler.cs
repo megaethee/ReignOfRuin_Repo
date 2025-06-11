@@ -10,6 +10,7 @@ public class UnitHandler : MonoBehaviour
       Peasant,
       Archer,
       Blacksmith,
+      Drunkard,
       Wizard 
    } public UnitType unitType;
 
@@ -74,6 +75,7 @@ public class UnitHandler : MonoBehaviour
    public void StateReset()
    { 
       minigameStarted = false;
+      imEngaged = false;
       transform.GetChild(state-1).gameObject.SetActive(false);
       transform.GetChild(0).gameObject.SetActive(true);
       if (gameObject.tag == "Station") transform.GetChild(0).gameObject.GetComponent<CharacterStation>().Again();
