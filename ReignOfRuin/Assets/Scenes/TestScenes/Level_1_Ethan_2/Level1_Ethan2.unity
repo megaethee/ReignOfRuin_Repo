@@ -4104,7 +4104,7 @@ PrefabInstance:
       objectReference: {fileID: 8854621695523414869, guid: 33d5d9f816981c947b0bed8a19bcdb6c, type: 3}
     - target: {fileID: 4700956197367003888, guid: bab0cec46220ff84bbb7e77a18ec3239, type: 3}
       propertyPath: spawnHeight
-      value: -1
+      value: -1.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
