@@ -26,8 +26,8 @@ public class CameraToggle : MonoBehaviour
 
     void LaneOn(){
         if (CameraManager == 1){
-            Camera1.rect = new Rect(0, 0, .8f, 1);
-            Camera2.rect = new Rect(.8f, 0, 1, 1);
+            Camera1.rect = new Rect(0, 0, 0.94f, 1);
+            Camera2.rect = new Rect(0.94f, 0, 1, 1);
             CameraManager = 0;
         }
         else{
@@ -39,13 +39,13 @@ public class CameraToggle : MonoBehaviour
 
     void LaneToggle(){
         if (LaneManager == 1){
-            Camera1.rect = new Rect(0, 0, .8f, 1);
-            Camera2.rect = new Rect(.8f, 0, 1, 1);
+            Camera1.rect = new Rect(0, 0, 0.94f, 1);
+            Camera2.rect = new Rect(0.94f, 0, 1, 1);
             LaneManager = 0;
         }
         else{
-            Camera1.rect = new Rect(.2f, 0, 1, 1);
-            Camera2.rect = new Rect(0, 0, .2f, 1);
+            Camera1.rect = new Rect(.06f, 0, 1, 1);
+            Camera2.rect = new Rect(0, 0, .06f, 1);
             LaneManager = 1;
         }
     }
