@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     public float speed;
     private Vector2 move;
     public int CoinCounter = 0;
+    public int ScarecrowCounter = 0;
     public GameObject Arrow;
 
     [SerializeField]

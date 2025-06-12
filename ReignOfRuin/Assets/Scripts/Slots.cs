@@ -6,6 +6,9 @@ public class Slots : MonoBehaviour
 {
     public Reel[] reel;
     bool startSpin;
+    string[] randomListColor = {"Green", "Red", "Blue"};
+    string color;
+    public UnitHandler stationHandler;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -33,15 +36,31 @@ public class Slots : MonoBehaviour
             spinner.Spin = true;
         }
 
-        for(int i = 0; i < reel.Length; i++)
+        for (int i = 0; i < reel.Length; i++)
         {
             //Allow The Reels To Spin For A Random Amout Of Time Then Stop Them
             yield return new WaitForSeconds(Random.Range(1, 3));
             reel[i].Spin = false;
-            reel[i].RandomPosition();
+            //reel[i].RandomPosition();
+            string color = randomListColor[Random.Range(0, randomListColor.Length)];
+            reel[i].AlignMiddle(color);
+            if (color == "Green")
+            {
+
+            }
+            else if (color == "Red")
+            {
+
+            }
+            else
+            {
+
+            }
         }
 
         //Allows The Machine To Be Started Again 
         startSpin = false;
+        stationHandler.StateProceed();
+        Destroy(gameObject);
     }
 }
