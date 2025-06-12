@@ -1945,6 +1945,14 @@ PrefabInstance:
       propertyPath: m_LayerOverridePriority
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2621155590867020051, guid: d6778b8346d3f584e8df286029b8d18c, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 9e28e87f6a654344fb6f8a79f684009a, type: 3}
+    - target: {fileID: 2621155590867020051, guid: d6778b8346d3f584e8df286029b8d18c, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 9e28e87f6a654344fb6f8a79f684009a, type: 3}
     - target: {fileID: 2904895051355068910, guid: d6778b8346d3f584e8df286029b8d18c, type: 3}
       propertyPath: unitType
       value: 2
@@ -1953,10 +1961,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlacksmithStation
       objectReference: {fileID: 0}
+    - target: {fileID: 5581329101761551824, guid: d6778b8346d3f584e8df286029b8d18c, type: 3}
+      propertyPath: m_Volume
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 6517212940335222502, guid: d6778b8346d3f584e8df286029b8d18c, type: 3}
       propertyPath: unit
       value: 
       objectReference: {fileID: 4649626281728029866, guid: 4fe3abadd9373564eba0c51d363c3950, type: 3}
+    - target: {fileID: 7344145443466096743, guid: d6778b8346d3f584e8df286029b8d18c, type: 3}
+      propertyPath: maxVolume
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 7472368242856239549, guid: d6778b8346d3f584e8df286029b8d18c, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.49999994

@@ -9,7 +9,6 @@ public class QTEManager : MonoBehaviour
     // UI
     public TextMeshProUGUI cueText;               // Displays "Hit the Anvil!" and other feedback
     public TextMeshProUGUI scoreText;             // Displays current score during the minigame
-
     // Audio
     public AudioSource hammerAudio;               // Plays hammer sound on successful hit
     public AudioSource missAudio;                 // Plays when the player misses
@@ -60,7 +59,7 @@ public class QTEManager : MonoBehaviour
             if (timer <= hitWindow)
                 HitSuccess(); // Successful hit within timing window
             else
-                HitMissed();  // Late hit
+                HitMissed();  // Hit to late
         }
 
         // If no input and time runs out, count as miss
@@ -97,7 +96,7 @@ public class QTEManager : MonoBehaviour
 
         // Start minigame-specific ambience
         if (minigameAmbience != null && !minigameAmbience.isPlaying)
-            minigameAmbience.Play();
+            minigameAmbience.Play();            
 
         FreezePlayer(true); // Prevent movement during minigame
 
@@ -110,7 +109,7 @@ public class QTEManager : MonoBehaviour
         hammerAudio.Play();
         cueText.color = Color.green;
         cueText.text = "Nice!";
-        
+
         // Note to self: ++ is like adding 1 to whatever variable you have
         // Two kinds, Post and Pre
         // Example of post: int x = 5, int y = x++
@@ -129,6 +128,7 @@ public class QTEManager : MonoBehaviour
             StartCoroutine(DelayedEndMinigame());
         else
             StartCoroutine(WaitBeforeNextCue());
+            
     }
 
     // Called when player misses or hits too late
@@ -229,6 +229,7 @@ public class QTEManager : MonoBehaviour
         //cueText.gameObject.transform.parent.gameObject.SetActive(false);
 
         Destroy(anvilTrigger);
+            
     }
 
     // Clears cue text after a short delay
@@ -238,6 +239,7 @@ public class QTEManager : MonoBehaviour
         yield return new WaitForSeconds(delay);
 
         scoreText.text = "";
+        
     }
 
     // Updates on-screen score display

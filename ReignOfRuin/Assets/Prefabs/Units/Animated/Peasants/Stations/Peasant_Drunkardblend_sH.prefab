@@ -2035,14 +2035,50 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[4]'
       value: 
       objectReference: {fileID: 4752915951934637871, guid: ff6e55444cc96084a9b6de1c2f17940d, type: 3}
+    - target: {fileID: 2621155590867020051, guid: d6778b8346d3f584e8df286029b8d18c, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 70a4303e9958cd644aa8b2c52cb03ee7, type: 3}
+    - target: {fileID: 2621155590867020051, guid: d6778b8346d3f584e8df286029b8d18c, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 70a4303e9958cd644aa8b2c52cb03ee7, type: 3}
     - target: {fileID: 4334584025584484124, guid: d6778b8346d3f584e8df286029b8d18c, type: 3}
       propertyPath: m_Name
       value: DrunkardStation
       objectReference: {fileID: 0}
+    - target: {fileID: 5581329101761551824, guid: d6778b8346d3f584e8df286029b8d18c, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5581329101761551824, guid: d6778b8346d3f584e8df286029b8d18c, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: bf81015dd2522d94a82f4df42df64760, type: 3}
+    - target: {fileID: 5581329101761551824, guid: d6778b8346d3f584e8df286029b8d18c, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: bf81015dd2522d94a82f4df42df64760, type: 3}
+    - target: {fileID: 5866837626280895319, guid: d6778b8346d3f584e8df286029b8d18c, type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866837626280895319, guid: d6778b8346d3f584e8df286029b8d18c, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: bf81015dd2522d94a82f4df42df64760, type: 3}
+    - target: {fileID: 5866837626280895319, guid: d6778b8346d3f584e8df286029b8d18c, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: bf81015dd2522d94a82f4df42df64760, type: 3}
     - target: {fileID: 6517212940335222502, guid: d6778b8346d3f584e8df286029b8d18c, type: 3}
       propertyPath: unit
       value: 
       objectReference: {fileID: 4649626281728029866, guid: f22a9ab8c4d5bb54f886b698777a17f3, type: 3}
+    - target: {fileID: 7344145443466096743, guid: d6778b8346d3f584e8df286029b8d18c, type: 3}
+      propertyPath: maxVolume
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7472368242856239549, guid: d6778b8346d3f584e8df286029b8d18c, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.7077001
@@ -2094,6 +2130,10 @@ PrefabInstance:
     - target: {fileID: 7472368242856239549, guid: d6778b8346d3f584e8df286029b8d18c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8787729987396161248, guid: d6778b8346d3f584e8df286029b8d18c, type: 3}
+      propertyPath: maxVolume
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8796404573505652962, guid: d6778b8346d3f584e8df286029b8d18c, type: 3}
       propertyPath: cameraZoomManager
