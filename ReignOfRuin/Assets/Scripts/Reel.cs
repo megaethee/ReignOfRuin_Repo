@@ -37,12 +37,12 @@ public class Reel : MonoBehaviour
     {
         List<int> parts = new List<int>();
 
+        parts.Add(200);
         parts.Add(100);
-        parts.Add(50);
         parts.Add(0);
-        parts.Add(-50);
         parts.Add(-100);
-        parts.Add(-150);
+        parts.Add(-200);
+        parts.Add(-300);
 
         foreach (Transform image in transform)
         {
@@ -60,12 +60,12 @@ public class Reel : MonoBehaviour
         List<int> parts = new List<int>();        
 
         //Add All Of The Values For The Original Y Postions  
+        parts.Add(200);
         parts.Add(100);
-        parts.Add(50);
         middlePart.Add(0);//0 Is The Middle Position
-        parts.Add(-50);
         parts.Add(-100);
-        parts.Add(-150);
+        parts.Add(-200);
+        parts.Add(-300);
 
         foreach (Transform image in transform)
         {
