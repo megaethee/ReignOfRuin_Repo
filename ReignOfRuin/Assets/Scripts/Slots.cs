@@ -71,6 +71,7 @@ public class Slots : MonoBehaviour, UnitInterface
             }
             else
             {
+                startSpin = false;
                 Instantiate(Resources.Load<GameObject>("Peasant_Farmer"), transform.parent.position - new Vector3(0, 1, 0), Resources.Load<GameObject>("Peasant_Farmer").transform.rotation);
                 stationHandler.StateReset();
             }

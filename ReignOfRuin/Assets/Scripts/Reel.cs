@@ -76,7 +76,7 @@ public class Reel : MonoBehaviour
               image.transform.position = new Vector3(image.transform.position.x, middlePart[rand] + transform.parent.GetComponent<RectTransform>().transform.position.y, image.transform.position.z);
               middlePart.RemoveAt(rand);
             }
-            else 
+            else if (parts.Count > 0) 
             {
               int rand = Random.Range(0, parts.Count);
               //The "transform.parent.GetComponent<RectTransform>().transform.position.y" Allows It To Adjust To The Canvas Y Position
