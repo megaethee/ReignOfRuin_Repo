@@ -17,9 +17,10 @@ public class ScarecrowSpawner : MonoBehaviour
 
     void Awake()
     {
+        PlayerStates.ScarecrowMinigame == true;
         for (int i = 0; i < 3; i++)
         {
-            Instantiate(scarecrowPrefab,new Vector3(Random.Range(-spawnRangeX, spawnRangeX), 0.75f, Random.Range(-spawnRangeY, spawnRangeY)), Quaternion.identity);
+            Instantiate(scarecrowPrefab, new Vector3(Random.Range(-spawnRangeX, spawnRangeX), 0.75f, Random.Range(-spawnRangeY, spawnRangeY)), Quaternion.identity);
         }
     }
 
@@ -28,7 +29,8 @@ public class ScarecrowSpawner : MonoBehaviour
         if (PlayerController._Instance.ScarecrowCounter == 3){
             stationHandler.StateProceed();
             Destroy(gameObject);
-            PlayerController._Instance.CoinCounter = 0; 
+            PlayerStates.ScarecrowMinigame == false;
+            PlayerController._Instance.ScarecrowCounter = 0; 
         }
     }
 }

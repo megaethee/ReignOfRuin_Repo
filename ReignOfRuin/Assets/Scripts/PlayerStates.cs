@@ -7,7 +7,7 @@ public class PlayerStates : MonoBehaviour
     public static PlayerStates _Instance { get; private set; }
     public Vector3 playerPos;
     public bool isEngaged = false;
-
+    public bool ScarecrowMinigame = false;
     private void Awake()
     {
         if (null == _Instance)
@@ -20,7 +20,10 @@ public class PlayerStates : MonoBehaviour
     {
         playerPos = transform.position; 
 
-        
+        if (Input.GetKeyDown(KeyCode.Space) && ScarecrowMinigame)
+        {
+            Instantiate(m_Projectile, m_SpawnTransform.position, m_SpawnTransform.rotation);
+        }
     } 
 
     public IEnumerator Blink()
