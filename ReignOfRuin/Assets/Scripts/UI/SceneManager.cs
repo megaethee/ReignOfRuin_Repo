@@ -33,8 +33,8 @@ public class SceneController : MonoBehaviour
         switch (buttonName)
         {
             case "StartGame":
-                LoadScene("GameScene");
-                break;
+                LoadScene("GameScene"); 
+                break; 
             case "QuitGame":
                 ExitGame();
                 break;
