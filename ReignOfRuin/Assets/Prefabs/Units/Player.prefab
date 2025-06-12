@@ -1850,7 +1850,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   CoinCounter: 0
-  Arrow: {fileID: 4770258989410254132, guid: aa56e8c4148a0db4387064e5d58c6f03, type: 3}
+  ScarecrowCounter: 0
+  Arrow: {fileID: 1058762866234132360, guid: b311318dc778ea14e9c2278ae472e45d, type: 3}
+  movement: {x: 0, y: 0, z: 0}
+  canMove: 0
+  uiManager: {fileID: 0}
   rB: {fileID: 0}
 --- !u!114 &477544173013290972
 MonoBehaviour:
@@ -1866,6 +1870,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPos: {x: 0, y: 0, z: 0}
   isEngaged: 0
+  ScarecrowMinigame: 0
+  m_Projectile: {fileID: 1058762866234132360, guid: b311318dc778ea14e9c2278ae472e45d, type: 3}
 --- !u!114 &3877311199611670913
 MonoBehaviour:
   m_ObjectHideFlags: 0
