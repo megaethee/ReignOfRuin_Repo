@@ -82,7 +82,8 @@ public class QTEManager : MonoBehaviour
             sH.minigameStarted = true;
         }
     
-        anvilTrigger = GameObject.Find("AnvilTrigger(Clone)");
+        anvilTrigger = GameObject.FindWithTag("AnvilTrigger");
+        maxAttempts = anvilTrigger.GetComponent<AnvilTrigger>().maxAttemptsLevel;
         cueText.gameObject.transform.parent.gameObject.SetActive(true);
         gameActive = true;
         currentAttempts = 0;
@@ -169,7 +170,7 @@ public class QTEManager : MonoBehaviour
     // Waits briefly before showing next cue, to give time for "Nice!" or "Miss!" to show
     IEnumerator WaitBeforeNextCue()
     {
-        yield return new WaitForSeconds(1.0f); // Wait 1 second to show feedback
+        yield return new WaitForSeconds(1f); // Wait 1 second to show feedback
         StartCoroutine(WaitAndShowCue());      // Then prepare next cue
     }
 

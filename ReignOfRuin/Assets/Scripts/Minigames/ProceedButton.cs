@@ -1,16 +1,25 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.SceneManagement;
+
 
 public class ProceedButton : MonoBehaviour
 {
+   private SceneController _sceneController;
    public UnitHandler uH, sH;
 
    private DialogueHandler dH;
 
    private void Awake()
    {
+      if (_sceneController == null)
+      {
+         _sceneController = FindObjectOfType<SceneController>();
+         if (_sceneController == null)
+         {
+            Debug.LogError("_sceneController not found in the scene.");
+         }
+      }
       //this shit needs to change 
       dH = DialogueHandler._Instance; 
    }
@@ -53,6 +62,6 @@ public class ProceedButton : MonoBehaviour
    
    public void Restart()
    {
-      SceneManager.LoadScene(0);
+      _sceneController.HandleButtonPress("StartGame");
    }
 }
