@@ -3,21 +3,23 @@ using UnityEngine;
 public class Arrow : MonoBehaviour
 {
 
-    public float speed = 40.0f;
-    private float topBound = 50;
+    public float m_Speed = 40.0f;
+    public float m_Lifespan = 3f; // this is the projectile's lifespan (in seconds)
+     private Rigidbody m_Rigidbody;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Awake  ()
+    {
+        m_Rigidbody = GetComponent<Rigidbody>();
+    }
     void Start()
     {
-        
+        m_Rigidbody.AddForce(m_Rigidbody.transform.forward * m_Speed);
+        Destroy(gameObject, m_Lifespan);
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.forward * Time.deltaTime * speed);
-        if (transform.position.z > topBound)
-        {
-            Destroy(gameObject);
-        }
+        
     }
 }

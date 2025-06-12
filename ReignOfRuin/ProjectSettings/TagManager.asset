@@ -17,6 +17,7 @@ TagManager:
   - Scarecrow
   - UIPanel
   - AnvilTrigger
+  - Arrow
   layers:
   - Default
   - TransparentFX

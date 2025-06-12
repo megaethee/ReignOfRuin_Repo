@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueSequence:
   - Oh god I'm so *burp* drunk!
-  inx: 1
+  - Find me some more kegs, then I'll go get that ruddy king!
+  inx: 2

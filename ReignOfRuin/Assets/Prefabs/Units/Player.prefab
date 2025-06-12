@@ -1804,10 +1804,6 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 580ad553-162a-4393-8ba0-3bf41625cfd3
     m_ActionName: 'Player/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: f2565188-e8e4-4c45-a44f-334c3053ebf0
-    m_ActionName: 'Player/Escape[/Keyboard/escape]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -1854,7 +1850,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   CoinCounter: 0
-  Arrow: {fileID: 4770258989410254132, guid: aa56e8c4148a0db4387064e5d58c6f03, type: 3}
+  ScarecrowCounter: 0
+  Arrow: {fileID: 1058762866234132360, guid: b311318dc778ea14e9c2278ae472e45d, type: 3}
   movement: {x: 0, y: 0, z: 0}
   canMove: 0
   uiManager: {fileID: 0}
@@ -1873,6 +1870,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPos: {x: 0, y: 0, z: 0}
   isEngaged: 0
+  ScarecrowMinigame: 0
+  m_Projectile: {fileID: 1058762866234132360, guid: b311318dc778ea14e9c2278ae472e45d, type: 3}
 --- !u!114 &3877311199611670913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1887,6 +1886,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSounds:
   - {fileID: 8300000, guid: 3fd9d27d093cc4a469e66fe6f0b4a65c, type: 3}
+  - {fileID: 8300000, guid: ba202e03f29431b4ca1e8e810d013624, type: 3}
   stepInterval: 0.65
   randomizePitch: 1
   pitchRange: {x: 0.9, y: 1.1}

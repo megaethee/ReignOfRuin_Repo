@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 move;
     private bool isPaused = false;
     public int CoinCounter = 0;
+    public int ScarecrowCounter = 0;
     public GameObject Arrow;
     public Vector3 movement;
     public bool canMove;
