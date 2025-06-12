@@ -3,8 +3,8 @@ using UnityEngine;
 public class Arrow : MonoBehaviour
 {
 
-    public float speed = 40.0f;
-    public float lifespan = 3f; // this is the projectile's lifespan (in seconds)
+    public float m_Speed = 40.0f;
+    public float m_Lifespan = 3f; // this is the projectile's lifespan (in seconds)
      private Rigidbody m_Rigidbody;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake  ()

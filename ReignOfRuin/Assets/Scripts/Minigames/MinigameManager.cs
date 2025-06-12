@@ -46,9 +46,9 @@ public class MinigameManager : MonoBehaviour
                 StartMiniGame(mgDataBase[0].miniGames[gameLvl-1]);
                 break;
             case UnitHandler.UnitType.Archer:
-                Debug.Log("I am archer");
-                sH.StateProceed();
-                //StartMiniGame(mgDataBase[1].miniGames[gameLvl]);
+                //Debug.Log("I am archer");
+                //sH.StateProceed();
+                StartMiniGame(mgDataBase[1].miniGames[gameLvl-1]);
                 break;
             case UnitHandler.UnitType.Blacksmith:
                 Debug.Log("I am blacksmith");
@@ -58,9 +58,9 @@ public class MinigameManager : MonoBehaviour
                 StartMiniGameCenter(mgDataBase[3].miniGames[gameLvl-1]);
                 break;
             case UnitHandler.UnitType.Wizard:
-                Debug.Log("I am a wizard");
-                sH.StateProceed();
-                //StartMiniGame(mgDataBase[4].miniGames[gameLvl-1]);
+                //Debug.Log("I am a wizard");
+                //sH.StateProceed();
+                StartMiniGame(mgDataBase[4].miniGames[gameLvl-1]);
                 break;
         } 
         
@@ -77,7 +77,7 @@ public class MinigameManager : MonoBehaviour
 
         GameObject miniGamePref = Instantiate(mG.mgObj, curPosition + offset, mG.mgObj.transform.rotation);  
     } 
-
+//starts minigames that happen in center of town
     private void StartMiniGameCenter(MiniGame mG)
     {
         GameObject miniGamePref = Instantiate(mG.mgObj, new Vector3(0, 0, -12), mG.mgObj.transform.rotation);
