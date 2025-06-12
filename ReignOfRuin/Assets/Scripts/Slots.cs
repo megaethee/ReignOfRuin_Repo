@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Slots : MonoBehaviour
+public class Slots : MonoBehaviour, UnitInterface
 {
     public Reel[] reel;
     bool startSpin;
@@ -10,9 +10,21 @@ public class Slots : MonoBehaviour
     string color;
     public UnitHandler stationHandler;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    
+    void Awake()
+    {
+       Again(); 
+    }
+
+    public void Again()
     {
         startSpin = false;
+
+        if (GameObject.FindWithTag("Station") != null)
+        {
+            stationHandler = GameObject.FindWithTag("Station").GetComponent<UnitHandler>();
+            stationHandler.minigameStarted = true;
+        }
     }
 
     // Update is called once per frame
@@ -46,21 +58,28 @@ public class Slots : MonoBehaviour
             reel[i].AlignMiddle(color);
             if (color == "Green")
             {
-
+                //Allows The Machine To Be Started Again 
+                startSpin = false;
+                stationHandler.StateProceed();
+                //Destroy(gameObject); 
             }
             else if (color == "Red")
             {
-
+                startSpin = false;
+                stationHandler.StateReset();
+                //Destroy(gameObject); 
             }
             else
             {
-
+                Instantiate(Resources.Load<GameObject>("Peasant_Farmer"), transform.parent.position - new Vector3(0, 1, 0), Resources.Load<GameObject>("Peasant_Farmer").transform.rotation);
+                stationHandler.StateReset();
             }
-        }
+        }        
+    }
 
-        //Allows The Machine To Be Started Again 
-        startSpin = false;
-        stationHandler.StateProceed();
-        Destroy(gameObject);
+    public void DestroyUI()
+    {
+        stationHandler.cameraZoomManager.FollowPlayerYOnly();
+        stationHandler.imEngaged = false;
     }
 }
