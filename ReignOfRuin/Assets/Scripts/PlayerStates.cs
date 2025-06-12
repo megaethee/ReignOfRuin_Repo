@@ -8,6 +8,8 @@ public class PlayerStates : MonoBehaviour
     public Vector3 playerPos;
     public bool isEngaged = false;
     public bool ScarecrowMinigame = false;
+    public GameObject m_Projectile; 
+
     private void Awake()
     {
         if (null == _Instance)
@@ -22,7 +24,7 @@ public class PlayerStates : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && ScarecrowMinigame)
         {
-            Instantiate(m_Projectile, m_SpawnTransform.position, m_SpawnTransform.rotation);
+            Instantiate(m_Projectile, transform.position + new Vector3(0, 1, 0), transform.rotation);
         }
     } 
 
