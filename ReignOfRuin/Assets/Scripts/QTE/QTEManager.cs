@@ -57,6 +57,7 @@ public class QTEManager : MonoBehaviour
         // Check for spacebar input
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            Instantiate(Resources.Load<GameObject>("VFX_EasyExplosion_tut"), transform.position, transform.rotation);
             if (timer <= hitWindow)
                 HitSuccess(); // Successful hit within timing window
             else

@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Bolts
   m_EditorClassIdentifier: 
   dialogueSequence:
-  - Bolts and Sprockets!
-  inx: 2
+  - Bolts and Blots!
+  - Win my slots!
+  inx: 0
