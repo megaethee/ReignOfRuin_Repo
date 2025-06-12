@@ -285,7 +285,9 @@ MonoBehaviour:
     and can be enlisted by forging new shields. \r\nThe Wizard can knock down enemies
     but is the hardest to recruit. \r\nThe King's army is an equal match, using the
     same abilities to strike you down. The Soldiers, Royal Archers, Knights, Alchemists,
-    and Jesters are all equally powerful."
+    and Jesters are all equally powerful.\nComplete tasks to earn rewards and deploy
+    recruits to battle on the Battle Bridge to prevent the destruction of Loftlink.
+    Prioritize completing tasks to gain assistance from units."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6133bece4371a2549bc232f873c047ae, type: 2}
   m_sharedMaterial: {fileID: -468334748802230548, guid: 6133bece4371a2549bc232f873c047ae, type: 2}
@@ -312,7 +314,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12.8
+  m_fontSize: 11
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
