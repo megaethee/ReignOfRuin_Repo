@@ -49,15 +49,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cueText: {fileID: 0}
   scoreText: {fileID: 0}
+  progressImage: {fileID: 0}
+  progressStages:
+  - {fileID: 21300000, guid: e1b337888b92b9c47a3d0b9d339b5053, type: 3}
+  - {fileID: 21300000, guid: f603e0aa51cf67149a3dd1481f8b115d, type: 3}
+  - {fileID: 21300000, guid: 308b68f37e7c34044b6a4912a4b2404e, type: 3}
+  - {fileID: 21300000, guid: c52b6ee48511dce4dbf84591a5f705b4, type: 3}
+  - {fileID: 21300000, guid: c9b9658b7e84ad94babb8241df4a481b, type: 3}
   hammerAudio: {fileID: 5577214666475966798}
   missAudio: {fileID: 3705015948678350626}
   minigameAmbience: {fileID: 5545296388168480014}
   areaAmbience: {fileID: 0}
   hitWindow: 2
-  cueDelayRange: {x: 2, y: 3}
+  cueDelayRange: {x: 1, y: 2}
   maxAttempts: 5
   player: {fileID: 0}
+  anvilTrigger: {fileID: 0}
   playerMovementScript: {fileID: 0}
+  sH: {fileID: 0}
   onMinigameCompleted:
     m_PersistentCalls:
       m_Calls: []

@@ -965,6 +965,7 @@ Transform:
   - {fileID: 8068886025247229234}
   - {fileID: 1011651735870219044}
   - {fileID: 5852030485194409548}
+  - {fileID: 795812517792052447}
   - {fileID: 8419357052496088129}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -118.897, z: 0}
@@ -1945,6 +1946,14 @@ PrefabInstance:
       propertyPath: m_LayerOverridePriority
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2621155590867020051, guid: d6778b8346d3f584e8df286029b8d18c, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 9e28e87f6a654344fb6f8a79f684009a, type: 3}
+    - target: {fileID: 2621155590867020051, guid: d6778b8346d3f584e8df286029b8d18c, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 9e28e87f6a654344fb6f8a79f684009a, type: 3}
     - target: {fileID: 2904895051355068910, guid: d6778b8346d3f584e8df286029b8d18c, type: 3}
       propertyPath: unitType
       value: 2
@@ -1953,10 +1962,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlacksmithStation
       objectReference: {fileID: 0}
+    - target: {fileID: 5581329101761551824, guid: d6778b8346d3f584e8df286029b8d18c, type: 3}
+      propertyPath: m_Volume
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 6517212940335222502, guid: d6778b8346d3f584e8df286029b8d18c, type: 3}
       propertyPath: unit
       value: 
       objectReference: {fileID: 4649626281728029866, guid: 4fe3abadd9373564eba0c51d363c3950, type: 3}
+    - target: {fileID: 7344145443466096743, guid: d6778b8346d3f584e8df286029b8d18c, type: 3}
+      propertyPath: maxVolume
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 7472368242856239549, guid: d6778b8346d3f584e8df286029b8d18c, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.49999994
@@ -2115,4 +2132,70 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 46f7e196943c59a49b2bf0871f3eba4e, type: 3}
   m_PrefabInstance: {fileID: 2443313999486243791}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3072099776169585187
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 3128575731790525517}
+    m_Modifications:
+    - target: {fileID: 2425471235818839804, guid: 3801b5b70f5823141b3b3c9748cf9e50, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.1830277
+      objectReference: {fileID: 0}
+    - target: {fileID: 2425471235818839804, guid: 3801b5b70f5823141b3b3c9748cf9e50, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 2425471235818839804, guid: 3801b5b70f5823141b3b3c9748cf9e50, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 2425471235818839804, guid: 3801b5b70f5823141b3b3c9748cf9e50, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 2425471235818839804, guid: 3801b5b70f5823141b3b3c9748cf9e50, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: 2425471235818839804, guid: 3801b5b70f5823141b3b3c9748cf9e50, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2425471235818839804, guid: 3801b5b70f5823141b3b3c9748cf9e50, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2425471235818839804, guid: 3801b5b70f5823141b3b3c9748cf9e50, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2425471235818839804, guid: 3801b5b70f5823141b3b3c9748cf9e50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2425471235818839804, guid: 3801b5b70f5823141b3b3c9748cf9e50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2425471235818839804, guid: 3801b5b70f5823141b3b3c9748cf9e50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8133686382188871265, guid: 3801b5b70f5823141b3b3c9748cf9e50, type: 3}
+      propertyPath: m_Name
+      value: TalkBlackSmithAudioArea
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3801b5b70f5823141b3b3c9748cf9e50, type: 3}
+--- !u!4 &795812517792052447 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2425471235818839804, guid: 3801b5b70f5823141b3b3c9748cf9e50, type: 3}
+  m_PrefabInstance: {fileID: 3072099776169585187}
   m_PrefabAsset: {fileID: 0}
