@@ -1635,6 +1635,18 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: 0.09353018
       objectReference: {fileID: 0}
+    - target: {fileID: 3551159303187391091, guid: 3093239e1a92f754bba527b972d252ba, type: 3}
+      propertyPath: randDialogue.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3551159303187391091, guid: 3093239e1a92f754bba527b972d252ba, type: 3}
+      propertyPath: 'randDialogue.Array.data[3]'
+      value: 
+      objectReference: {fileID: 11400000, guid: de24bd46c4a1147498dc52167b006938, type: 2}
+    - target: {fileID: 3551159303187391091, guid: 3093239e1a92f754bba527b972d252ba, type: 3}
+      propertyPath: 'randDialogue.Array.data[4]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 9b6ba8247884eb34faa50c0e8e36f0e3, type: 2}
     - target: {fileID: 3559558448664489930, guid: 3093239e1a92f754bba527b972d252ba, type: 3}
       propertyPath: m_Size.x
       value: 1.372024

@@ -35,7 +35,7 @@ public class DialogueHandler : MonoBehaviour
     {
         testDialogue = dialogue;
 
-        dialogueTrans = GameObject.Find("DialogueObject").transform;
+        dialogueTrans = GameObject.Find("Canvas_UI").transform.GetChild(1).GetChild(2).GetChild(0).transform;
         txtToScreen = dialogueTrans.GetChild(1).GetComponent<TextMeshProUGUI>();
         pB = dialogueTrans.GetChild(2).GetComponent<ProceedButton>();
 

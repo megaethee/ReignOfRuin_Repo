@@ -1908,6 +1908,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6867225047054704747}
     m_Modifications:
+    - target: {fileID: 3551159303187391091, guid: 4fe3abadd9373564eba0c51d363c3950, type: 3}
+      propertyPath: randDialogue.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3551159303187391091, guid: 4fe3abadd9373564eba0c51d363c3950, type: 3}
+      propertyPath: 'randDialogue.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: de24bd46c4a1147498dc52167b006938, type: 2}
     - target: {fileID: 4649626281728029866, guid: 4fe3abadd9373564eba0c51d363c3950, type: 3}
       propertyPath: m_Name
       value: BlackSmith
