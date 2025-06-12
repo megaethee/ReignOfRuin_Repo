@@ -694,7 +694,11 @@ PrefabInstance:
     - target: {fileID: 477544173013290972, guid: b81576f5376605042b403f50adcd2730, type: 3}
       propertyPath: m_Projectile
       value: 
-      objectReference: {fileID: 1058762866234132360, guid: b311318dc778ea14e9c2278ae472e45d, type: 3}
+      objectReference: {fileID: 4770258989410254132, guid: aa56e8c4148a0db4387064e5d58c6f03, type: 3}
+    - target: {fileID: 748238434733464124, guid: b81576f5376605042b403f50adcd2730, type: 3}
+      propertyPath: Arrow
+      value: 
+      objectReference: {fileID: 4770258989410254132, guid: aa56e8c4148a0db4387064e5d58c6f03, type: 3}
     - target: {fileID: 3143919920265190332, guid: b81576f5376605042b403f50adcd2730, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -1231,6 +1235,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   units:
   - {fileID: 8389368463125347277, guid: 2cbc2ed35013e5342bc24333744ce8d1, type: 3}
+  - {fileID: 4017929863199749973, guid: 78654c1c90e23144b88b39aa2ba79d81, type: 3}
+  - {fileID: 4077338402628435353, guid: b2edc9d031638f7409c68ddb1bca5813, type: 3}
   bounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
@@ -2047,6 +2053,14 @@ PrefabInstance:
       propertyPath: 'layerSettings.Array.data[2].modifierStack.Array.data[0]'
       value: 
       objectReference: {fileID: 295440881}
+    - target: {fileID: 2588281492285715111, guid: 5e9da7c56df7dc540b8670e596d9167e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 17.272
+      objectReference: {fileID: 0}
+    - target: {fileID: 2588281492285715111, guid: 5e9da7c56df7dc540b8670e596d9167e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -20.066
+      objectReference: {fileID: 0}
     - target: {fileID: 3121849243427193314, guid: 5e9da7c56df7dc540b8670e596d9167e, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.70493734
@@ -2976,11 +2990,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4538497181123319231, guid: 2e031b280843fe04a9235661c5017cdf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.79748875
+      value: 4.552
       objectReference: {fileID: 0}
     - target: {fileID: 4538497181123319231, guid: 2e031b280843fe04a9235661c5017cdf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.987997
+      value: 5.749
       objectReference: {fileID: 0}
     - target: {fileID: 4538497181123319231, guid: 2e031b280843fe04a9235661c5017cdf, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4272,7 +4286,7 @@ PrefabInstance:
       objectReference: {fileID: 2013473919912703004, guid: 7f63133c5a072bf4eb0fab77ff2b8065, type: 3}
     - target: {fileID: 5266244332434498330, guid: 48a73805f47a21447a0e6b53a7639f22, type: 3}
       propertyPath: amountToSpawn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7599723939904070942, guid: 48a73805f47a21447a0e6b53a7639f22, type: 3}
       propertyPath: dialogue
@@ -4356,6 +4370,10 @@ PrefabInstance:
       propertyPath: unit
       value: 
       objectReference: {fileID: 8854621695523414869, guid: 33d5d9f816981c947b0bed8a19bcdb6c, type: 3}
+    - target: {fileID: 4700956197367003888, guid: bab0cec46220ff84bbb7e77a18ec3239, type: 3}
+      propertyPath: spawnHeight
+      value: -1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

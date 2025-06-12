@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: Archers
   m_EditorClassIdentifier: 
   dialogueSequence:
-  - My Archers are the cream of the crop!
+  - My archers need training.
+  - Shoot these dummies to show them!
+  - Press space to shoot.
   inx: 1

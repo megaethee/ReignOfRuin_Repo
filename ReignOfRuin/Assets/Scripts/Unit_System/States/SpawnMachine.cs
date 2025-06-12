@@ -5,11 +5,12 @@ using System.Collections.Generic;
 public class SpawnMachine : MonoBehaviour, UnitInterface
 {
    public GameObject unit, unitObj; 
+   
    [SerializeField] private Bounds bounds;
    [SerializeField] private float offsetX, offsetZ;
    
    public int amountToSpawn, toRestart;
-   public float spawnInterval = 0.05f;
+   public float spawnInterval = 0.05f, spawnHeight = -0.75f;
 //store previously spawned positions so they don't spawn on top of each other
    public Vector3 randPos, space;
    [SerializeField] private List<Vector3> randPositions = new List<Vector3>();
@@ -42,7 +43,7 @@ public class SpawnMachine : MonoBehaviour, UnitInterface
    {
         while (randPositions.Count < amountToSpawn) {
                BoundsCalculator();
-               randPos = bounds.center + new Vector3(offsetX, -1, offsetZ);
+               randPos = bounds.center + new Vector3(offsetX, spawnHeight, offsetZ);
                if (!randPositions.Contains(randPos)) {
                     randPositions.Add(randPos);
                     unitObj = Instantiate(unit, randPos, unit.transform.rotation); 
