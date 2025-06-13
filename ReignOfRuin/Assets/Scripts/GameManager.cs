@@ -26,11 +26,13 @@ public class GameManager : MonoBehaviour
     public void PauseGame()
     {
         Time.timeScale = 0;
+        AudioListener.pause = true;
     }
 
     public void ResumeGame()
     {
         Time.timeScale = 1;
+        AudioListener.pause = false;
     }
 
 }
